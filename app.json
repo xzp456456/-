@@ -1,0 +1,60 @@
+{
+  "pages": [
+    "pages/order-detail/index",
+    "pages/orderList/index",
+    "pages/Merchant/index",
+    "pages/me/index",
+    "pages/coupon-center/index",
+    "pages/cheap-detail/index",
+    "pages/fix-dtail/index",
+    "pages/seckill/index",
+    "pages/coupon/index",
+    "pages/order/index",
+    "pages/reduction/index",
+    "pages/detail/index",
+    "pages/shop-list/index",
+    "pages/business/index",
+    "pages/login/index",
+    "pages/index/index",
+    "pages/shop/logs",
+    "pages/classify/index",
+    "pages/search/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#2E9109",
+    "navigationBarTitleText": "来农去卖",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#bfbfbf",
+    "selectedColor": "#2E9109",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "/static/nav_icon_home_def.png",
+        "selectedIconPath": "/static/nav_icon_home_sel.png"
+      },
+      {
+        "pagePath": "pages/classify/index",
+        "text": "分类",
+        "iconPath": "/static/nav_icon_sort_def.png",
+        "selectedIconPath": "/static/nav_icon_sort_sel.png"
+      },
+      {
+        "pagePath": "pages/shop/logs",
+        "text": "购物车",
+        "iconPath": "/static/nav_icon_shop_def.png",
+        "selectedIconPath": "/static/nav_icon_shop_sel.png"
+      },
+      {
+        "pagePath": "pages/me/index",
+        "text": "我的",
+        "iconPath": "/static/nav_icon_mine_def.png",
+        "selectedIconPath": "/static/nav_icon_mine_sel.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

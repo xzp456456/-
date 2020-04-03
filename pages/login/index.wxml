@@ -1,0 +1,16 @@
+<!--pagesUser/login/login.wxml-->
+<view class="container">
+  <image src="/static/logo.png" class="logo" mode="widthFix"></image>
+  <view class="name">申请获取以下权限</view>
+
+  <block wx:if="{{!authWechatInfo}}">
+    <view class="txt">申请获取你的公开信息(头像、昵称等)</view>
+    <button class="mp-btn" open-type="getUserInfo" bindgetuserinfo="getWechatUserInfo">授权登录</button>
+  </block>
+
+  <block wx:if="{{authWechatInfo && !authWechatPhone}}">
+    <view class="txt">获得您的手机号信息用于用户信息登录</view>
+    <button class="mp-btn" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">绑定手机</button>
+  </block>
+
+</view>

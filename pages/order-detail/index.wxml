@@ -1,0 +1,78 @@
+<!--pages/order-detail/index.wxml-->
+<view class='container'>
+<view class='bg'>
+</view>
+<view class='orderPay'>
+<view class='wait'>等待支付，剩余
+<text class='time'> 14:23:32</text>
+</view>
+<view class='ted'>预期未支付订单将自动取消</view>
+<view class='flex flex-row flex-bet fu'>
+  <view class='cancel'>取消订单</view>
+  <view class='online'>在线客服</view>
+  <view class='pay'>去付款</view>
+</view>
+</view>
+<view class='max' >
+    <view class='timein'>预计送达时间：2020-03-20 9:00～10:00</view>
+    <view class='row mt'>
+      <view><text class='mobileName'>小屁孩</text> <text class='phone'>15159203758</text> </view>
+      <view>
+      <image class='address' src='../../static/order_icon_adderss.png'></image>
+      <text class='addressText'>福建省厦门市集美区软件园三期诚毅大街365 号A区04栋19楼</text>
+      </view>
+    </view>
+</view>
+ <view class='list'>
+  <view class='row'>
+   <view class='title' >
+    <text class='orderId'>订单编号：18070514570001</text>
+    <text class='type'>待付款</text>
+   </view>
+   <view class='flex flex-row flex-bet mt-20'>
+   <view class='flex flex-row '>
+    <image class='produce' src='../../static/pt.png' mode="widthFix"></image>
+    <view class='desc'>A级-千禧圣女果（中）1分/约 480-500g</view>
+    </view>
+    <view class='num'>x1</view>
+   </view>
+   <view class='flex flex-row flex-bet mt-20'>
+   <view class='flex flex-row '>
+    <image class='produce' src='../../static/pt.png' mode="widthFix"></image>
+    <view class='desc'>A级-千禧圣女果（中）1分/约 480-500g</view>
+    </view>
+    <view class='num'>x1</view>
+   </view>
+  <view class='flex flex-row flex-bet maker m'>
+   <view class='ty'>商品金额</view>
+   <view class='mi'>¥102.9</view>
+  </view>
+   <view class='flex flex-row flex-bet maker'>
+   <view class='ty'>优惠券减免</view>
+   <view class='mi'>-¥2.0</view>
+  </view>
+  <view class='flex flex-row flex-bet maker'>
+   <view class='ty bt'>满减</view>
+   <view class='mi'>-¥10.0</view>
+  </view>
+  <view class='flex flex-row flex-bet maker'>
+   <view class='ty'>备注</view>
+   <view class='mi'>送达前请电话联系</view>
+  </view>
+  <view class='flex flex-row flex-bet maker border'>
+   <view class='ty'>后台改价</view>
+   <view class='mi'>-¥20.0</view>
+  </view>
+  <view class='textRing'>共7件，合计：<text class='priceMoney'>¥90.9</text> </view>
+  </view>
+</view>
+<view class='modeBottom'>
+<view class='row'>
+ <view class='ps'>订单信息</view>
+ <view>
+  <view class='oid'>订单编号：29181028203892828</view>
+  <view class='oid'>下单时间：2019-11-28 14:19:30</view>
+ </view>
+ </view>
+</view>
+</view>

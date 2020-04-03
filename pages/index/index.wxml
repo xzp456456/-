@@ -1,0 +1,243 @@
+<!--index.wxml-->
+<view class="container">
+ <view class='banner'>
+ <view class='row'>
+ <view class='flex flex-bet space'>
+ <view class='flex flex-row address-name '>
+    <image class='address' src='../../static/home_icon_address.png'></image>
+    <text class='adtext'>集美区</text>
+    </view>
+    <view class='mode'>
+    <image class='search-img' src='../../static/home_icon_search.png'></image>
+      <input class='search' bindtap='search'  placeholder='请输入关键字搜索' placeholder-class='place'></input>
+    </view>
+    </view>
+    </view>
+    <view class='swiper'>
+   <swiper
+        autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <block wx:for="{{background}}" wx:key="*this">
+          <swiper-item>
+            <image class='img-width' src='../../static/banner.png' mode="widthFix"></image>
+          </swiper-item>
+        </block>
+      </swiper>
+ </view>
+ </view>
+ <view class='list'>
+    <view class='li'>
+        <view class='list-child'></view>
+        <text>热带水果</text>
+    </view>
+     <view class='li'>
+        <view class='list-child'></view>
+        <text>热带水果</text>
+    </view>
+     <view class='li'>
+        <view class='list-child'></view>
+        <text>热带水果</text>
+    </view>
+     <view class='li'>
+        <view class='list-child'></view>
+        <text>热带水果</text>
+    </view>
+     <view class='li'>
+        <view class='list-child'></view>
+        <text>热带水果</text>
+    </view>
+     <view class='li'>
+        <view class='list-child'></view>
+        <text>热带水果</text>
+    </view>
+     <view class='li'>
+        <view class='list-child'></view>
+        <text>热带水果</text>
+    </view>
+     <view class='li'>
+        <view class='list-child'></view>
+        <text>全部分类</text>
+    </view>
+ </view>
+ <view>
+ <view class='flex flex-row flex-bet miaosha'>
+ <view class='flex flex-row allTime'>
+ <view>限时秒杀</view>
+ <view class='time'>
+ <view>07</view><text>:</text>
+ <view>07</view><text>:</text>
+ <view>07</view>
+ </view>
+</view>
+
+ <view class='flex more-mode flex-center'>
+ <text class='more'>更多</text>
+ <image class='back' src='../../static/icon_more.png' ></image>
+ </view>
+
+
+ </view>
+ 
+ </view>
+
+ <view class='produce'>
+ <view class='list-thing'>
+    <image class='zwt' src='../../static/pt.png' mode="widthFix"></image>
+    <view class='mt'>
+    <view class='p-name'>进口西梅 约480-500g</view>
+    <view class='p-text'>果体微软时口感更佳</view>
+    <view class='sha'>
+      <view class='manjian'>满199减50</view>
+      <view class='manjian'>满399减80</view>
+    </view>
+    <view class='pay'>
+      <view >
+        <view class='price'>¥16.9</view>
+        <view class='old-price'>¥19.3</view>
+      </view>
+      <view><image class='add' src='../../static/btn_add.png' mode="widthFix"></image></view>
+    </view>
+ </view>
+ </view>
+<view class='list-thing'>
+    <image class='zwt' src='../../static/pt.png' mode="widthFix"></image>
+    <view class='mt'>
+    <view class='p-name'>进口西梅 约480-500g</view>
+    <view class='p-text'>果体微软时口感更佳</view>
+    <view class='sha'>
+      <view class='manjian'>满199减50</view>
+      <view class='manjian'>满399减80</view>
+    </view>
+    <view class='pay'>
+      <view >
+        <view class='price'>¥16.9</view>
+        <view class='old-price'>¥19.3</view>
+      </view>
+      <view><image class='add' src='../../static/btn_add.png' mode="widthFix"></image></view>
+    </view>
+ </view>
+ </view>
+<view class='list-thing'>
+    <image class='zwt' src='../../static/pt.png' mode="widthFix"></image>
+    <view class='mt'>
+    <view class='p-name'>进口西梅 约480-500g</view>
+    <view class='p-text'>果体微软时口感更佳</view>
+    <view class='sha'>
+      <view class='manjian'>满199减50</view>
+      <view class='manjian'>满399减80</view>
+    </view>
+    <view class='pay'>
+      <view >
+        <view class='price'>¥16.9</view>
+        <view class='old-price'>¥19.3</view>
+      </view>
+      <view><image class='add' src='../../static/btn_add.png' mode="widthFix"></image></view>
+    </view>
+ </view>
+ </view>
+<view class='list-thing'>
+    <image class='zwt' src='../../static/pt.png' mode="widthFix"></image>
+    <view class='mt'>
+    <view class='p-name'>进口西梅 约480-500g</view>
+    <view class='p-text'>果体微软时口感更佳</view>
+    <view class='sha'>
+      <view class='manjian'>满199减50</view>
+      <view class='manjian'>满399减80</view>
+    </view>
+    <view class='pay'>
+      <view >
+        <view class='price'>¥16.9</view>
+        <view class='old-price'>¥19.3</view>
+      </view>
+      <view><image class='add' src='../../static/btn_add.png' mode="widthFix"></image></view>
+    </view>
+ </view>
+ </view>
+ </view>
+<view class='guanggao'>
+    <image src='../../static/home_img_ad.png' mode="widthFix"></image>
+</view>
+
+ <view>
+ <view class='flex flex-row flex-bet chaozhi'>
+ <view class='flex flex-row allTime'>
+ <view>超值特卖</view>
+
+
+</view>
+
+ <view class='flex more-mode flex-center'>
+ <text class='more'>更多</text>
+ <image class='back' src='../../static/icon_more.png' ></image>
+ </view>
+
+
+ </view>
+ 
+ </view>
+
+<view>
+    <view class='main'>
+        <image class='prImg' src='../../static/pt.png' mode="widthFix"></image>
+        <view class='data-list'>
+            <view class='title'>进口火龙果 1个约/450-50…</view>
+            <view class='desc'>吃完来个花山竹更下火噢～</view>
+            <view class='sha'>
+              <view class='manjian'>满199减50</view>
+              <view class='manjian'>满199减50</view>
+            </view>
+            <view class='flex flex-bet'>
+            <view class='maker'>
+              <view class='price'>
+              ¥16.9
+              </view>
+               <view class='old-price ml-10'>
+              ¥16.9
+              </view>
+            </view>
+            <view><image class='add' src='../../static/btn_add.png' mode="widthFix"></image></view>
+            </view>
+        </view>
+    </view>
+
+    
+</view> 
+ <view class='flex flex-row flex-bet chaozhi'>
+ <view class='flex flex-row allTime'>
+ <view>好物推荐</view>
+
+
+</view>
+
+ <view class='flex more-mode flex-center'>
+ <text class='more'>更多</text>
+ <image class='back' src='../../static/icon_more.png' ></image>
+ </view>
+  </view>
+  <view>
+    <view class='main'>
+        <image class='prImg' src='../../static/pt.png' mode="widthFix"></image>
+        <view class='data-list'>
+            <view class='title'>进口火龙果 1个约/450-50…</view>
+            <view class='desc'>吃完来个花山竹更下火噢～</view>
+            <view class='sha'>
+              <view class='manjian'>满199减50</view>
+              <view class='manjian'>满199减50</view>
+            </view>
+            <view class='flex flex-bet'>
+            <view class='maker'>
+              <view class='price'>
+              ¥16.9
+              </view>
+               <view class='old-price ml-10'>
+              ¥16.9
+              </view>
+            </view>
+            <view><image class='add' src='../../static/btn_add.png' mode="widthFix"></image></view>
+            </view>
+        </view>
+    </view>
+
+    
+</view>
+<image class='loadMore' src='../../static/msg_img.png' mode="widthFix"></image>
+</view> 

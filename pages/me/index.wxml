@@ -1,0 +1,125 @@
+<!--pages/me/index.wxml-->
+<view class="container">
+<view class='me'>
+  <view class='flex flex-row row mt' wx:if="{{false}}">
+    <image class='avatar' src='../../static/tx.png'  mode="widthFix"></image>
+    <view class='ma-left'>
+    <view class='shopName'>Sweet&零食小铺</view>
+    <view class='phone'>绑定手机：151*****638</view>
+    </view>
+  </view>
+   <view class='flex flex-row row mt'>
+    <image class='avatar' src='../../static/weidenglu.png'  mode="widthFix"></image>
+    <view class='ma-left'>
+    <view class='shopName mt-cn'>登录/注册</view>
+    </view>
+  </view>
+  <view class='maker'>
+  <view class='order row'>
+  我的订单
+  </view>
+    <view class='row flex flex-row flex-bet'>
+    <view>
+     <image class='sord' src='../../static/mine_icon_faifukuan.png' mode="widthFix"></image>
+     <view class='text'>待付款</view>
+    </view>
+     <view>
+     <image class='sord' src='../../static/mine_icon_daishouhuo.png' mode="widthFix"></image>
+     <view class='text'>待收货</view>
+    </view>
+     <view>
+     <image class='sord' src='../../static/mine_icon_tuikuan.png' mode="widthFix"></image>
+     <view class='text'>退款/售后</view>
+    </view>
+     <view>
+     <image class='sord' src='../../static/mine_icon_all.png' mode="widthFix"></image>
+     <view class='text'>全部订单</view>
+    </view>
+    </view>
+  </view>
+</view>
+<view>
+  <view class='main-list'>
+      <view class='li flex flex-row flex-bet row item-center'>
+       <view class='flex item-center flex-row'>
+       <image class='modeImg' src='../../static/mine_icon_shop.png' mode="widthFix"></image>
+       <text class='td'>我的商户信息</text>
+       </view>
+
+         <view class='item-center flex-row height'>
+          <text class='sh'>审核中</text>
+          <image class='back' src='../../static/icon_more-s.png' mode="widthFix"></image>
+        
+       </view>
+      
+      </view>
+       <view class='border'></view>
+        <view class='li flex flex-row flex-bet row item-center'>
+       <view class='flex item-center flex-row'>
+       <image class='modeImg' src='../../static/mine_icon_coupon.png' mode="widthFix"></image>
+       <text class='td'>我的优惠券</text>
+       </view>
+
+         <view class='item-center flex-row height'>
+          <image class='back' src='../../static/icon_more-s.png' mode="widthFix"></image>
+        
+       </view>
+      
+      </view>
+       <view class='border'></view>
+        <view class='li flex flex-row flex-bet row item-center'>
+       <view class='flex item-center flex-row'>
+       <image class='modeImg' src='../../static/mine_icon_collect.png' mode="widthFix"></image>
+       <text class='td'>我的收藏</text>
+       </view>
+
+         <view class='item-center flex-row height'>
+  
+          <image class='back' src='../../static/icon_more-s.png' mode="widthFix"></image>
+        
+       </view>
+      
+      </view>
+       <view class='border'></view>
+        <view class='li flex flex-row flex-bet row item-center'>
+       <view class='flex item-center flex-row'>
+       <image class='modeImg' src='../../static/mine_icon_address.png' mode="widthFix"></image>
+       <text class='td'>收货地址</text>
+       </view>
+
+         <view class='item-center flex-row height'>
+          <image class='back' src='../../static/icon_more-s.png' mode="widthFix"></image>
+        
+       </view>
+      
+      </view>
+       <view class='border'></view>
+        <view class='li flex flex-row flex-bet row item-center'>
+       <view class='flex item-center flex-row'>
+       <image class='modeImg' src='../../static/mine_icon_saleman.png' mode="widthFix"></image>
+       <text class='td'>我的业务员</text>
+       </view>
+
+         <view class='item-center flex-row height'>
+          <image class='back' src='../../static/icon_more-s.png' mode="widthFix"></image>
+        
+       </view>
+      
+      </view>
+       <view class='border'></view>
+        <view class='li flex flex-row flex-bet row item-center'>
+       <view class='flex item-center flex-row'>
+       <image class='modeImg' src='../../static/mine_icon_help.png' mode="widthFix"></image>
+       <text class='td'>帮助与反馈</text>
+       </view>
+
+         <view class='item-center flex-row height'>
+          <image class='back' src='../../static/icon_more-s.png' mode="widthFix"></image>
+        
+       </view>
+      
+      </view>
+  </view>
+  <view class='btn'>退出登录</view>
+</view>
+</view>

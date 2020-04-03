@@ -1,0 +1,112 @@
+<!--pages/order/index.wxml-->
+<view class='container'>
+<view class='pos'>
+<image class='ops' src='../../static/jbd.png' mode="widthFix"></image>
+<view class='time'>
+    <view class='flex flex-row flex-bet addmd' wx:if="{{false }}">
+      <view class='flex flex-row'>
+        <image class='add' src='../../static/btn_add.png' mode="widthFix"></image>
+        <view class='address'>请先添加收货地址</view>
+      </view>
+      <image class='back' src='../../static/icon_more.png' mode="widthFix"></image>
+    </view>
+    <view class='flex flex-row flex-bet ddmd-new' wx:if="{{true }}">
+    <view class='flex flex-row'>
+        <view class='address'>小屁孩 15159203758</view>
+      </view>
+      <image class='back' src='../../static/icon_more.png' mode="widthFix"></image>
+    </view>
+     <view class='flex flex-row flex-bet addmd-s' wx:if="{{true }}">
+      <view class='flex flex-row'>
+        <image class='ad' src='../../static/order_icon_adderss.png' mode="widthFix"></image>
+        <view class='address'>福建省厦门市集美区软件园三期诚毅大街365 号A区04栋19楼</view>
+      </view>
+    </view>
+    <view>
+    <view class='flex flex-row flex-bet addmds'>
+      <view class='flex flex-row'>
+        <view class='address'>送达时间</view>
+      </view>
+      <view>
+     
+      <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+    <view class="picker">
+       <view class='line' >尽快送达 <image class='back mrt' src='../../static/icon_more.png' mode="widthFix"></image></view>
+    </view>
+  </picker>
+      </view>
+    </view>
+    </view>
+</view>
+</view>
+<view class='main'>
+ <view class='title'>商品列表</view>
+ <view class='flex flex-row flex-bet row mt'>
+ <view class='flex flex-row'>
+    <image class='orderPic' src='../../static/pic.png' mode="widthFix"></image>
+    <view class='ml-20'>
+    <view class='desc'>
+     A级-千禧圣女果（中）1分/约 480-500g
+     </view>
+    <view class='price'>¥13.2</view>
+    </view>
+    </view>
+    <view class='num'>x1</view>
+ </view>
+  <view class='flex flex-row flex-bet row mt'>
+ <view class='flex flex-row'>
+    <image class='orderPic' src='../../static/pic.png' mode="widthFix"></image>
+    <view class='ml-20'>
+    <view class='desc'>
+     A级-千禧圣女果（中）1分/约 480-500g
+     </view>
+    <view class='price'>¥13.2</view>
+    </view>
+    </view>
+    <view class='num'>x1</view>
+ </view>
+  <view class='flex flex-row flex-bet row mt'>
+ <view class='flex flex-row'>
+    <image class='orderPic' src='../../static/pic.png' mode="widthFix"></image>
+    <view class='ml-20'>
+    <view class='desc'>
+     A级-千禧圣女果（中）1分/约 480-500g
+     </view>
+    <view class='price'>¥13.2</view>
+    </view>
+    </view>
+    <view class='num'>x1</view>
+ </view>
+ <view class='flex flex-row flex-bet row list mt-top'>
+  <view class='yh'>优惠券</view>
+ <view class='num-uh'>3张优惠券可用 <image class='back mrt' src='../../static/icon_more.png' mode="widthFix"></image></view>
+ </view>
+ <view class='flex flex-row flex-bet row lists'>
+  <view class='yh'>满减</view>
+ <view class='color'>-¥100</view>
+ </view>
+ <view class='flex flex-row row lists'>
+  <view class='label'>买家留言：</view>
+  <input placeholder-class='placeholder' placeholder='选填:建议填写内容前先与商家沟通'></input>
+ </view>
+ <view class='row textRight'>
+   <view><text class='tak'>共7件商品 合计：</text><text class='priceNum'>¥68.0</text></view>
+ </view>
+</view>
+<view class='payMode'>
+  <view class='flex flex-row flex-bet row item-center'>
+   <view>支付方式</view>
+   <view class='flex item-center'>
+    <image class='mdc' src='../../static/icon_pay_wechat.png' mode="widthFix"></image>
+    <text class='wx'>微信</text>
+   </view>
+  </view>
+</view>
+</view>
+<view class='paysha'>
+<view class='row pd'>
+  <view class='pricPay'>总计：¥68.0</view>
+  <view class='buttonPay'>去支付</view>
+  </view>
+</view>
+

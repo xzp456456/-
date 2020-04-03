@@ -1,0 +1,32 @@
+/**app.wxss**/
+.flex{
+  display:  flex;
+}
+
+.flex-row{
+  flex-direction: row;
+}
+
+.flex-center{
+  justify-content: center;
+}
+
+.flex-bet{
+  justify-content: space-between
+}
+
+.flex-aro{
+  justify-content: safe
+}
+
+.flex-wrap{
+  flex-wrap: wrap;
+}
+
+.flex-space{
+  justify-content: space-around;
+}
+
+.item-center{
+  align-items: center;
+}

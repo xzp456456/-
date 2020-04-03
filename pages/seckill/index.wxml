@@ -1,0 +1,73 @@
+<!--pages/seckill/index.wxml-->
+<view class='container'>
+  <view class='bgType'>
+    <view class='dest'>
+      <view class='textColor'>09:00</view>
+      <view class='type'>正在抢购</view>
+    </view>
+     <view class='dest'>
+      <view class='textColor'>09:00</view>
+      <view class='type'>正在抢购</view>
+    </view>
+     <view class='dest'>
+      <view class='textColor'>09:00</view>
+      <view class='type'>正在抢购</view>
+    </view>
+     <view class='dest'>
+      <view class='textColor'>09:00</view>
+      <view class='type'>正在抢购</view>
+    </view>
+  </view>
+ <view class='flex center mt-main'>
+     <view>
+     <view class='flex flex-row flex-center item-center'><image class='tiem-icon' src='../../static/icon_time.png'></image> <text class='to'>09:00正在疯抢</text></view>
+     <view class='flex flex-row flex-bet sord'><view class='border'></view> <view class='border'></view> </view>
+     <view class='flex flex-row flex-center'>
+      <view class='live'>离本场结束</view>
+      <view class='flex flex-row'>
+     <view class='ts'>02</view><text class='b'>:</text>
+    <view class='ts'>56</view><text class='b'>:</text>
+    <view class='ts'>22</view>
+      </view>
+     </view>
+     </view>
+ </view>
+
+  <view class='flex flex-row list-view space'>
+    <image class='widt' src='../../static/pt.png' mode="widthFix"></image>
+    <view class='space-list'>
+      <view class='title'>进口火龙果 1个/450-500g</view>
+      <view class='numP'>每人限购2份</view>
+      <view class='flex flex-row flex-center item-center'>
+        <view class='jindu'></view>
+        <text class='txtN'>剩余58%</text>
+      </view>
+      <view class='flex flex-row flex-bet mtTop'>
+        <view class='flex flex-row item-center'>
+          <view class='priceColor'>¥16.9</view>
+           <view class='ck'>¥19.3</view>
+        </view>
+        <view class='payJoin'>立即抢购</view>
+      </view>
+    </view>
+  </view>
+<view class='flex flex-row list-view-or space'>
+<image class='poser' src='../../static/msg_yiqiangguang.png' mode="widthFix"></image>
+    <image class='widt mo' src='../../static/pt.png' mode="widthFix"></image>
+    <view class='space-list'>
+      <view class='title-or'>进口火龙果 1个/450-500g</view>
+      <view class='numP-or'>每人限购2份</view>
+      <view class='flex flex-row flex-center item-center'>
+        <view class='jindu'></view>
+        <text class='txtN-or'>剩余58%</text>
+      </view>
+      <view class='flex flex-row flex-bet mtTop'>
+        <view class='flex flex-row item-center'>
+          <view class='priceColor detColor'>¥16.9</view>
+           <view class='ck detColor'>¥19.3</view>
+        </view>
+        <view class='payJoin-or'>立即抢购</view>
+      </view>
+    </view>
+  </view>
+</view>

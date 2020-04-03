@@ -1,0 +1,83 @@
+/* pages/Merchant/index.wxss */
+.container {
+  width: 100%;
+  position: absolute;
+  background: rgba(245, 245, 245, 1);
+  height: 100%;
+}
+
+.shenhe{
+  width: 160rpx;
+}
+
+.info{
+  font-size:32rpx;
+font-family:PingFangSC-Medium,PingFang SC;
+font-weight:500;
+color:rgba(17,17,17,1);
+}
+
+.main{
+  height: 148rpx;
+}
+
+.bg{
+background: white;
+}
+
+.row{
+  margin: 0 auto;
+  width: 90%;
+}
+
+.infoDesc{
+  font-size:24rpx;
+font-family:PingFangSC-Regular,PingFang SC;
+font-weight:400;
+color:rgba(153,153,153,1);
+}
+
+.mainlist{
+   flex-direction: row;
+   display: flex;
+   align-items: center;
+  background: white;
+  width: 100%;
+}
+
+.textName{
+  font-size:30rpx;
+font-family:PingFangSC-Regular,PingFang SC;
+font-weight:400;
+color:rgba(17,17,17,1);
+}
+
+.tt{
+  font-size:30rpx;
+font-family:PingFangSC-Regular,PingFang SC;
+font-weight:400;
+color:rgba(17,17,17,1);
+}
+
+.height{
+  height: 102rpx;
+}
+
+.border{
+  border-bottom:1rpx solid rgba(239,239,239,1); 
+}
+
+.matop{
+  margin-top: 20rpx;
+}
+
+.mt-30{
+  margin-top: 30rpx;
+}
+
+.tts{
+  width: 260rpx;
+  height: 166rpx;
+  border:1px solid rgba(239,239,239,1);
+  margin-bottom: 30rpx;
+}

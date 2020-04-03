@@ -1,0 +1,145 @@
+/* pages/me/index.wxss */
+.container{
+  width: 100%;
+  position: absolute;
+  background:rgba(245,245,245,1);
+}
+
+.me{
+  width: 100%;
+  height: 230rpx;
+  background: #2E9109;
+}
+
+.avatar{
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.row{
+  margin: 0 auto;
+  width: 90%;
+}
+
+.shopName{
+  font-size:34rpx;
+font-family:PingFangSC-Medium,PingFang SC;
+font-weight:500;
+color:rgba(255,255,255,1);
+}
+
+.phone{
+  font-size:24rpx;
+font-family:PingFangSC-Regular,PingFang SC;
+font-weight:400;
+color:rgba(255,255,255,1);
+}
+
+.mt{
+  padding-top: 30rpx;
+}
+
+.ma-left{
+  margin-left: 20rpx;
+}
+
+.shopName{
+  margin-bottom: 30rpx;
+}
+
+.maker{
+  width:690rpx;
+height:229rpx;
+background:rgba(255,255,255,1);
+border-radius:10rpx;
+margin: 0 auto;
+margin-top: 48rpx;
+}
+
+.order{
+  font-size:30rpx;
+  font-family:PingFangSC-Medium,PingFang SC;
+  font-weight:500;
+  color:rgba(17,17,17,1);
+  padding-top: 20rpx;
+}
+
+.sord{
+  width: 60rpx;
+  display: block;
+  margin: 0 auto;
+  margin-top: 30rpx;
+  margin-bottom: 10rpx;
+}
+
+.text{
+  font-size:26rpx;
+font-family:PingFangSC-Regular,PingFang SC;
+font-weight:400;
+color:rgba(102,102,102,1);
+}
+
+.main-list{
+  width:690rpx;
+height:605rpx;
+background:rgba(255,255,255,1);
+border-radius:10rpx;
+margin: 0 auto;
+margin-top: 200rpx;
+}
+
+.back{
+  width: 12rpx;
+}
+
+.modeImg{
+  width: 36rpx;
+  height: 32rpx;
+}
+
+.height{
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+}
+
+.sh{
+  font-size:26rpx;
+font-family:PingFangSC-Regular,PingFang SC;
+font-weight:400;
+color:rgba(153,153,153,1);
+margin-right: 20rpx;
+}
+
+.td{
+  font-size:28rpx;
+font-family:PingFangSC-Regular,PingFang SC;
+font-weight:400;
+color:rgba(17,17,17,1);
+margin-left: 22rpx;
+}
+
+.border{
+  border-bottom:1rpx solid rgba(239,239,239,1); 
+  margin-left: 90rpx;
+}
+
+.btn{
+  font-size:32rpx;
+font-family:PingFangSC-Regular,PingFang SC;
+font-weight:400;
+color:rgba(17,17,17,1);
+width:690rpx;
+height:88rpx;
+line-height: 88rpx;
+text-align: center;
+background:rgba(255,255,255,1);
+border-radius:10px;
+margin: 0 auto;
+margin-top: 20rpx;
+margin-bottom: 40rpx;
+}
+
+.mt-cn{
+  margin-top: 26rpx;
+}

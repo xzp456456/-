@@ -1,0 +1,54 @@
+<!--pages/coupon/index.wxml-->
+<view class='container'>
+<view class='list'>
+  <image class='wid' src='../../static/coupon_img.png' mode="widthFix"></image>
+    <view class='flexd'>
+    <view class='textMon'>
+     <view class='mon'>
+     <text class='fu'>¥</text>
+     <text class='money'>6</text>
+     </view>
+     <view class='type'>折扣券</view>
+
+    </view>
+
+    <view class='ma-pd'>
+      <view class='flex flex-row flex-bet'>
+      <text class='sizeType'>新用户大礼包</text>
+      <view class='btn-lin'>立即领取</view>
+      
+      </view>
+      <view class='manjian'>·满99元可用</view>
+      <view class='timeDay'>·有效期2019-12-13 至 2020-01-01</view>
+    </view>
+
+    </view>
+</view>
+
+
+<view class='list'>
+  <image class='wid' src='../../static/coupon-1.png' mode="widthFix"></image>
+    <view class='flexd'>
+    <view class='textMon'>
+     <view class='mon'>
+     <text class='fu'>¥</text>
+     <text class='money'>6</text>
+     </view>
+     <view class='type'>满减劵</view>
+
+    </view>
+
+    <view class='ma-pd'>
+      <view class='flex flex-row flex-bet'>
+      <text class='sizeTypeMode'>新用户大礼包</text>
+      <view class='btn-mo'>已领取</view>
+      
+      </view>
+      <view class='manjianMode'>·满99元可用</view>
+      <view class='timeDayMode'>·有效期2019-12-13 至 2020-01-01</view>
+    </view>
+
+    </view>
+</view>
+  <image wx:if="{{false}}" class="zreo" src='../../static/msg_img_nocoupon.png'></image>
+</view>

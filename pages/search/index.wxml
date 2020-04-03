@@ -1,0 +1,33 @@
+<!--pages/search/index.wxml-->
+<view class='row'>
+    <view class='main'>
+    <view class='poser'>
+    <image class='search' src='../../static/icon_search.png' mode="widthFix"></image>
+    <input class='search-input' placeholder='请输入关键字搜索' placeholder-class='placeholder'></input></view>
+      
+      <view class='search-text'>搜索</view>
+    </view>
+    <view class='hot'>
+      热门搜索
+    </view>
+    <view class='text-name'>
+        <view class='gjc'>
+        丹东草莓
+        </view>
+        <view class='gjc'>
+        丹东草莓
+        </view>
+           <view class='gjc'>
+        丹东草莓
+        </view>
+        <view class='gjc'>
+        丹东草莓
+        </view>
+           <view class='gjc'>
+        丹东草莓
+        </view>
+        <view class='gjc'>
+        丹东草莓
+        </view>
+    </view>
+</view>

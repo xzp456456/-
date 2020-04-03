@@ -1,0 +1,80 @@
+<!--pages/coupon/index.wxml-->
+<view class='container'>
+<view class='list'>
+  <image class='wid' src='../../static/coupon_img.png' mode="widthFix"></image>
+    <view class='flexd'>
+    <view class='textMon'>
+     <view class='mon'>
+     <text class='fu'>¥</text>
+     <text class='money'>6</text>
+     </view>
+     <view class='type'>满减劵</view>
+
+    </view>
+
+    <view class='ma-pd'>
+      <view class='flex flex-row flex-bet'>
+      <text class='sizeType'>新用户大礼包</text>
+      <image class='select' src='../../static/icon_select_def.png'></image>
+      
+      </view>
+      <view class='manjian'>·满99元可用</view>
+      <view class='timeDay'>·有效期2019-12-13 至 2020-01-01</view>
+    </view>
+
+    </view>
+</view>
+
+<view class='list'>
+  <image class='wid' src='../../static/coupon_img.png' mode="widthFix"></image>
+    <view class='flexd'>
+    <view class='textMon'>
+     <view class='mon'>
+     <text class='fu'>¥</text>
+     <text class='money'>6</text>
+     </view>
+     <view class='type'>满减劵</view>
+
+    </view>
+
+    <view class='ma-pd'>
+      <view class='flex flex-row flex-bet'>
+      <text class='sizeType'>新用户大礼包</text>
+      <image class='select' src='../../static/icon_select_def.png'></image>
+      
+      </view>
+      <view class='manjian'>·满99元可用</view>
+      <view class='timeDay'>·有效期2019-12-13 至 2020-01-01</view>
+    </view>
+
+    </view>
+</view>
+
+<view class='list'>
+  <image class='wid' src='../../static/coupon-1.png' mode="widthFix"></image>
+    <view class='flexd'>
+    <view class='textMon'>
+     <view class='mon'>
+     <text class='fu'>¥</text>
+     <text class='money'>6</text>
+     </view>
+     <view class='type'>满减劵</view>
+
+    </view>
+
+    <view class='ma-pd'>
+      <view class='flex flex-row flex-bet'>
+      <text class='sizeTypeMode'>新用户大礼包</text>
+      <image class='select' src='../../static/icon_select_def.png'></image>
+      
+      </view>
+      <view class='manjianMode'>·满99元可用</view>
+      <view class='timeDayMode'>·有效期2019-12-13 至 2020-01-01</view>
+    </view>
+
+    </view>
+</view>
+<view>
+  <button class='btn'>确认使用</button>
+</view>
+</view>

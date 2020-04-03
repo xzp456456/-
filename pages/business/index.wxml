@@ -1,0 +1,40 @@
+<!--pages/business/index.wxml-->
+<view class='row'>
+<view class='list'>
+ <text class='label'>商户名称</text> <input class='text-right' placeholder='请输入商户名称' placeholder-class='placeholder'></input>
+ </view>
+
+<view class='list-up'>
+ <text class='label'>营业执照</text> <view class='upload'>
+
+    <image src='../../static/icon_camera.png' class='auto' ></image>
+    <text>点击上传</text>
+ </view>
+ 
+ </view>
+
+
+
+<view class='list'>
+ <text class='label'>联系人</text> <input class='text-right' placeholder='请输入联系人姓名' placeholder-class='placeholder'></input>
+ </view>
+ <view class='list'>
+ <text class='label'>联系电话</text> <input class='text-right' placeholder='请输入联系人电话' placeholder-class='placeholder'></input>
+ </view>
+
+<view class='set'>
+  注：商家注册后需上传商户信息，并通过审核后方可在平台 下单。
+</view>
+
+<view class='btn'>
+  <button>
+  提交审核
+  </button>
+</view>
+<view class='jump'>跳过</view>
+
+
+
+
+
+</view>

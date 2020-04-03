@@ -1,0 +1,38 @@
+<!--pages/Merchant/index.wxml-->
+<view class='container'>
+<view class='bg'>
+<view class='main flex flex-row row flex-bet item-center'>
+<view >
+    <view class='info'>信息审核中，请耐心等待…</view>
+    <view class='infoDesc'>预计3个工作日内审核完毕</view>
+</view>
+<image  class='shenhe' src='../../static/msg_shenhezhong.png' mode="widthFix"></image>
+</view>
+</view>
+<view class='matop'>
+   <view class='mainlist'>
+   <view class='flex flex-bet flex-row row border height item-center'>
+     <view class='textName'>商户名称</view>
+     <view class='tt'>Sweet&零食小铺</view>
+   </view>
+   </view>
+    <view class='mainlist'>
+   <view class='flex flex-bet flex-row row border'>
+     <view class='textName mt-30'>营业执照</view>
+     <view class='tts mt-30'></view>
+   </view>
+   </view>
+    <view class='mainlist'>
+   <view class='flex flex-bet flex-row row border height item-center'>
+     <view class='textName'>联系人</view>
+     <view class='tt'>王小二</view>
+   </view>
+   </view>
+    <view class='mainlist'>
+   <view class='flex flex-bet flex-row row border height item-center'>
+     <view class='textName'>联系电话</view>
+     <view class='tt'>15158292638</view>
+   </view>
+   </view>
+</view>
+</view>

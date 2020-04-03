@@ -1,0 +1,44 @@
+<!--pages/orderList/index.wxml-->
+<view class='container'>
+<view class='flex flex-row space '>
+  <view >全部</view>
+   <view>待付款</view>
+    <view>待发货</view>
+     <view>待收货</view>
+</view>
+  
+  <view class='list'>
+  <view class='row'>
+   <view class='title' >
+    <text class='orderId'>订单编号：18070514570001</text>
+    <text class='type'>待付款</text>
+   </view>
+   <view class='flex flex-row flex-bet mt-20'>
+   <view class='flex flex-row '>
+    <image class='produce' src='../../static/pt.png' mode="widthFix"></image>
+    <view class='desc'>A级-千禧圣女果（中）1分/约 480-500g</view>
+    </view>
+    <view class='num'>x1</view>
+   </view>
+   <view class='flex flex-row flex-bet mt-20'>
+   <view class='flex flex-row '>
+    <image class='produce' src='../../static/pt.png' mode="widthFix"></image>
+    <view class='desc'>A级-千禧圣女果（中）1分/约 480-500g</view>
+    </view>
+    <view class='num'>x1</view>
+   </view>
+   <view class='flex flex-row border-bottom pb'>
+    <view class='mode'></view>
+    <view class='flex flex-row flex-bet flw border-top pd'>
+   <view class='pro'>...等其他商品</view>
+   <view class='proNum'>共5件，总计：<text class='priceNum'>¥329.2</text> </view>
+   </view>
+   </view>
+   <view class='payMode'> 
+      <view class='cancel'>取消订单</view>
+      <view class='pay'>去付款</view>
+   </view>
+  </view>
+</view>
+<image class='null' wx:if="{{flase}}" src='../../static/msg_img_notorder.png' mode="widthFix"></image>
+</view>
