@@ -1,0 +1,130 @@
+<!--logs.wxml-->
+<view class="container">
+ <view class="mar row"> 清空购物车</view>
+
+
+ <view class="item">
+  <view class="list">
+  <view class="title">
+   <image class="quan" src="../../static/icon_select_def.png" mode="widthFix"></image>
+   <view class="mj">满减</view>
+   <view class="ym">已满199，已减20</view>
+  </view>
+  <view class="flex flex-row deplay">
+    <image class="gou" src="../../static/icon_select_sel.png"></image>
+    <image class="ad" src="../../static/pt.png" mode="widthFix"></image>
+    <view>
+    <view class="desc">陕西沙瓢水果番茄4斤12/16枚…</view>
+    <view class="all" >满199减20</view>
+    <view class="flex flex-row item-center">
+      <view class="flex flex-row flex-bet item-center wid">
+      <view class="flex flex-row item-center">
+        <view class="mon">69.9</view>
+          <view class="price">¥99.0</view>
+          </view>
+          <view class="flex flex-row">
+      <image class="jian" src="../../static/btn_plus.png"></image>
+      <view class="num">1</view>
+      <image class="jia" src="../../static/btn_add-1.png"></image>
+      </view>
+      </view>
+      </view>
+      
+    </view>
+    
+  </view>
+    <view class="flex flex-row deplay">
+    <image class="gou" src="../../static/icon_select_sel.png"></image>
+    <image class="ad" src="../../static/pt.png" mode="widthFix"></image>
+    <view>
+    <view class="desc">陕西沙瓢水果番茄4斤12/16枚…</view>
+    <view class="all" >满199减20</view>
+    <view class="flex flex-row item-center">
+      <view class="flex flex-row flex-bet item-center wid">
+      <view class="flex flex-row item-center">
+        <view class="mon">69.9</view>
+          <view class="price">¥99.0</view>
+          </view>
+          <view class="flex flex-row">
+      <image class="jian" src="../../static/btn_plus.png"></image>
+      <view class="num">1</view>
+      <image class="jia" src="../../static/btn_add-1.png"></image>
+      </view>
+      </view>
+      </view>
+      
+    </view>
+    
+  </view>
+  </view>
+
+
+  
+ </view>
+ <view class="item">
+  <view class="list">
+
+  <view class="flex flex-row deplay">
+    <image class="gou" src="../../static/icon_select_sel.png"></image>
+    <image class="ad" src="../../static/pt.png" mode="widthFix"></image>
+    <view>
+    <view class="desc">陕西沙瓢水果番茄4斤12/16枚…</view>
+    <view class="all" >满199减20</view>
+    <view class="flex flex-row item-center">
+      <view class="flex flex-row flex-bet item-center wid">
+      <view class="flex flex-row item-center">
+        <view class="mon">69.9</view>
+          <view class="price">¥99.0</view>
+          </view>
+          <view class="flex flex-row">
+      <image class="jian" src="../../static/btn_plus.png"></image>
+      <view class="num">1</view>
+      <image class="jia" src="../../static/btn_add-1.png"></image>
+      </view>
+      </view>
+      </view>
+      
+    </view>
+    
+  </view>
+    <view class="flex flex-row deplay">
+    <image class="gou op" src="../../static/icon_select_sel.png"></image>
+    <image class="ad op" src="../../static/pt.png" mode="widthFix"></image>
+    <view class="mm">
+    <view class="desc or">陕西沙瓢水 <view class="right">删除</view></view>
+    <view class="all or" >满199减20</view>
+    <view class="flex flex-row item-center">
+      <view class="flex flex-row flex-bet item-center wid">
+      <view class="flex flex-row item-center">
+        <view class="mon or">69.9</view>
+          <view class="price or">¥99.0</view>
+          </view>
+          
+      </view>
+      </view>
+      
+    </view>
+    
+  </view>
+  </view>
+
+
+  
+ </view>
+ <view class="kuai"></view>
+</view>
+
+<view class="lving ">
+<view class="row flex flex-row flex-bet item-center">
+<view class="flex flex-row item-center">
+<image class="select" src="../../static/icon_select_def.png"></image>
+<view class="alls">全选</view>
+</view>
+<view class="flex flex-row ">
+<view class="te">总计：</view>
+<view class="prices">¥338.0</view>
+
+</view>
+<view class="btn">去结算(2)</view>
+</view>
+</view>

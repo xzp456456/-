@@ -1,0 +1,58 @@
+<!--pages/address/index.wxml-->
+<view class="container">
+  <view class="item">
+   <view class="list">
+     <view class="flex flex-row row">
+     <view class="xp">小屁孩</view>
+     <view class="mat">15159212638</view>
+     </view>
+     <view class="row desc">
+     福建省厦门市集美区软件园三期A区04栋1901(厦门 亿阳汇聚)
+     </view>
+     <view class="border">
+        <view class="flex flex-row  item-center">
+        <image class="mode" src="../../static/icon_select_sel.png" mode="widthFix"></image>
+        <text class="adds">默认地址</text>
+        </view>
+        <view class="flex flex-row  item-center">
+          <view class="flex flex-row  item-center">
+          <image class="mos" src="../../static/address_icon_edit.png"  mode="widthFix"></image>
+          <text class="al">编辑</text>
+          </view>
+           <view class="flex flex-row  item-center mll">
+             <image class="mos" src="../../static/address_icon_edit.png"  mode="widthFix"></image>
+          <text class="al">删除</text>
+           </view>
+        </view>
+     </view>
+   </view>
+   <view class="list">
+     <view class="flex flex-row row">
+     <view class="xp">小屁孩</view>
+     <view class="mat">15159212638</view>
+     </view>
+     <view class="row desc">
+     福建省厦门市集美区软件园三期A区04栋1901(厦门 亿阳汇聚)
+     </view>
+     <view class="border">
+        <view class="flex flex-row  item-center">
+        <image class="mode" src="../../static/icon_select_def.png" mode="widthFix"></image>
+        <text class="adds">默认地址</text>
+        </view>
+        <view class="flex flex-row  item-center">
+          <view class="flex flex-row  item-center">
+          <image class="mos" src="../../static/address_icon_edit.png"  mode="widthFix"></image>
+          <text class="al">编辑</text>
+          </view>
+           <view class="flex flex-row  item-center mll">
+             <image class="mos" src="../../static/address_icon_edit.png"  mode="widthFix"></image>
+          <text class="al">删除</text>
+           </view>
+        </view>
+     </view>
+   </view>
+  </view>
+  <view>
+    <button class="btn">添加收货地址</button>
+  </view>
+</view>

@@ -1,0 +1,68 @@
+<!--pages/help/index.wxml-->
+<view class="container">
+  <view class="mode">
+    常见问题
+  </view>
+  <view class="item">
+    <view class="list">
+      <view class="flex flex-row item-center">
+      <view class="dian"></view>
+      <view class="text">小程序订单如何付款？</view>
+      </view>
+      <image class="back" src="../../static/icon_more.png"></image>
+    </view>
+       <view class="list">
+      <view class="flex flex-row item-center">
+      <view class="dian"></view>
+      <view class="text">订单取消后多久能退款？</view>
+      </view>
+      <image class="back" src="../../static/icon_more.png"></image>
+    </view>
+       <view class="list">
+      <view class="flex flex-row item-center">
+      <view class="dian"></view>
+      <view class="text">购买的果品是来农去卖的店员送货的吗？</view>
+      </view>
+      <image class="back" src="../../static/icon_more.png"></image>
+    </view>
+       <view class="list">
+      <view class="flex flex-row item-center">
+      <view class="dian"></view>
+      <view class="text">如何查看优惠券？</view>
+      </view>
+      <image class="back" src="../../static/icon_more.png"></image>
+    </view>
+       <view class="list">
+      <view class="flex flex-row item-center">
+      <view class="dian"></view>
+      <view class="text">如何查看订单详情？</view>
+      </view>
+      <image class="back" src="../../static/icon_more.png"></image>
+    </view>
+       <view class="list">
+      <view class="flex flex-row item-center">
+      <view class="dian"></view>
+      <view class="text">如何注册和登录来农去卖帐户？</view>
+      </view>
+      <image class="back" src="../../static/icon_more.png"></image>
+    </view>
+       <view class="list">
+      <view class="flex flex-row item-center">
+      <view class="dian"></view>
+      <view class="text">如何查找想要的生鲜商品？</view>
+      </view>
+      <image class="back" src="../../static/icon_more.png"></image>
+    </view>
+      
+  </view>
+    <view class="flex flex-row mk">
+    <view class="btn">
+    <image class="fled" src="../../static/icon_service1.png"></image>
+    <text>客服热线</text>
+    </view>
+    <view class="btn">
+    <image class="fled" src="../../static/icon_service2.png"></image>
+    <text>在线客服</text>
+    </view>
+    </view>
+</view>

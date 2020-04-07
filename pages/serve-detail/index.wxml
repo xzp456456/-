@@ -1,0 +1,35 @@
+<!--pages/serve-detail/index.wxml-->
+<view class="container">
+ <view class="mail">
+ <view class="row">
+  <view class="wait">等待平台审核</view>
+  <view class="outs">您发起退款申请，请耐心等待</view>
+ </view>
+ </view>
+   <view class="item">
+    <view class="list">
+      <view class="desc">
+      <view class="flex flex-row">
+        <image class="descImg" src="../../static/pt.png" mode="widthFix"></image>
+        <view class="shuigu">
+       <text class="height">A级-金美人哈密瓜（中）1个/约1300 -1500g</text>
+       <text class="out">退款金额：¥13.3</text>
+        </view>
+        </view>
+        <view class="x">x1</view>
+      </view>
+     
+    </view>
+    </view>
+    <view class="center">
+    <view class="row sell">
+      <view class="seller">售后单号：仅退款</view>
+      <view class="out">退款原因：包装破了，水果烂掉了。</view>
+    </view>
+    <view class="heid">
+      <image class="fled" src="../../static/pt.png" mode="widthFix"></image>
+      <image class="fled" src="../../static/pt.png" mode="widthFix"></image>
+    </view>
+    </view>
+    <view class="btn-new">撤销申请</view>
+</view>

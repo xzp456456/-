@@ -1,0 +1,28 @@
+<!--pages/add-address/index.wxml-->
+<view class="container">
+<view class="item">
+  <view class="list">
+      <view class="label">收货人</view>
+      <input class="ml-data" placeholder-class="placeholder"  placeholder="请输入收货人姓名"></input>
+        <image class="x" src="../../static/icon_delect.png"></image>
+  </view>
+   <view class="list">
+      <view class="label">联系电话</view>
+      <input class="ml-data" placeholder-class="placeholder"  placeholder="请输入收货人手机号码"></input>
+        <image class="x" src="../../static/icon_delect.png"></image>
+  </view>
+   <view class="list">
+      <view class="label">所在区域</view>
+      <input class="ml-data" placeholder-class="placeholder"  placeholder="选择省市区"></input>
+      <image class="leo" src="../../static/icon_more.png"></image>
+  </view>
+   <view class="list no-border">
+      <view class="label">详细地址</view>
+      <input class="ml-data" placeholder-class="placeholder"  placeholder="如道路、门牌号"></input>
+        <image class="x" src="../../static/icon_delect.png"></image>
+  </view>
+</view>
+<view class="btn"> 保存</view>
+<view class="btn" wx:if="{{false}}"> 保存修改</view>
+<view class="delet" wx:if="{{false}}">删除收货地址</view>
+</view>

@@ -1,0 +1,35 @@
+<!--pages/manager/index.wxml-->
+<view class="item">
+    <view class="list flex flex-row flex-bet row">
+    <view class="list flex flex-row">
+      <image class="tx" src="../../static/tx.png"></image>
+      <view class="ml">
+        <view class="name">欧阳娜娜</view>
+        <view>
+        <image class="phone" src="../../static/icon_iphone.png"></image>
+        <text class="mobile">19930298490</text>
+        </view>
+      </view>
+      </view>
+      <view class="m">
+        <image class="mal" src="../../static/shop_icon_phone.png"></image>
+        <view>拨打</view>
+        </view>
+    </view>
+  <view class="list flex flex-row flex-bet row">
+    <view class="list flex flex-row">
+      <image class="tx" src="../../static/tx.png"></image>
+      <view class="ml">
+        <view class="name">欧阳娜娜</view>
+        <view>
+        <image class="phone" src="../../static/icon_iphone.png"></image>
+        <text class="mobile">19930298490</text>
+        </view>
+      </view>
+      </view>
+      <view class="m">
+        <image class="mal" src="../../static/shop_icon_phone.png"></image>
+        <view>拨打</view>
+        </view>
+    </view>
+</view>

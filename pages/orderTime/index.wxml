@@ -1,0 +1,32 @@
+<!--pages/orderTime/index.wxml-->
+<view class="container">
+ <view class="main-time">
+   <view class="pd">
+   <text>剩余支付时间</text>
+   </view>
+   <view class="item">
+   <view class="ts">07</view><text>：</text>
+    <view class="ts">07</view><text>：</text>
+     <view class="ts">58</view>
+   </view>
+ </view>
+
+<view class="center">
+  <view class="list row">
+    <view class="label">订单编号</view>
+     <view class="number">18070514570001</view>
+  </view>
+  <view class="list row">
+    <view class="label">支付金额</view>
+     <view class="number">¥90.3</view>
+  </view>
+  <view class="list row">
+    <view class="label">支付方式</view>
+     <view class="number">
+     <image class="payType" src="../../static/icon_pay_wechat.png"></image>
+      微信
+     </view>
+  </view>
+</view>
+ <view class="button">确认支付</view>
+</view>

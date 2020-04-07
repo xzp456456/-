@@ -1,0 +1,21 @@
+/* pages/help-detail/index.wxss */
+.title{
+  font-size:36rpx;
+font-family:PingFangSC-Medium,PingFang SC;
+font-weight:500;
+color:rgba(17,17,17,1);
+text-align: center;
+margin-top: 40rpx;
+margin-bottom: 40rpx;
+}
+
+.desc{
+  width: 90%;
+  margin: 0 auto;
+  font-size:30rpx;
+font-family:PingFangSC-Regular,PingFang SC;
+font-weight:400;
+color:rgba(17,17,17,1);
+line-height:50rpx;
+word-wrap: break-word;
+}

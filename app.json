@@ -1,5 +1,18 @@
 {
   "pages": [
+    "pages/shop/index",
+    "pages/classify/index",
+    "pages/help-detail/index",
+    "pages/help/index",
+    "pages/manager/index",
+    "pages/add-address/index",
+    "pages/address/index",
+    "pages/collect/index",
+    "pages/coupon-detail/index",
+    "pages/serve-detail/index",
+    "pages/serve-order/index",
+    "pages/server/index",
+    "pages/orderTime/index",
     "pages/order-detail/index",
     "pages/orderList/index",
     "pages/Merchant/index",
@@ -16,8 +29,6 @@
     "pages/business/index",
     "pages/login/index",
     "pages/index/index",
-    "pages/shop/logs",
-    "pages/classify/index",
     "pages/search/index"
   ],
   "window": {
@@ -43,7 +54,7 @@
         "selectedIconPath": "/static/nav_icon_sort_sel.png"
       },
       {
-        "pagePath": "pages/shop/logs",
+        "pagePath": "pages/shop/index",
         "text": "购物车",
         "iconPath": "/static/nav_icon_shop_def.png",
         "selectedIconPath": "/static/nav_icon_shop_sel.png"

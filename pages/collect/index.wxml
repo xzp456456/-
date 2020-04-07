@@ -1,0 +1,42 @@
+<!--pages/collect/index.wxml-->
+ <view class='main'>
+        <image class='prImg' src='../../static/pt.png' mode="widthFix"></image>
+        <view class='data-list'>
+            <view class='title'>进口火龙果 1个约/450-50…</view>
+            <view class='desc'>吃完来个花山竹更下火噢～</view>
+          
+            <view class='flex flex-bet'>
+            <view class='maker'>
+              <view class='price'>
+              ¥16.9
+              </view>
+               <view class='old-price ml-10'>
+              ¥16.9
+              </view>
+            </view>
+            <view><image class='add' src='../../static/btn_add.png' mode="widthFix"></image></view>
+            </view>
+        </view>
+        
+           </view>
+ <view class='main'>
+        <image class='prImg' src='../../static/pt.png' mode="widthFix"></image>
+        <view class='data-list'>
+            <view class='title'>进口火龙果 1个约/450-50…</view>
+            <view class='desc'>吃完来个花山竹更下火噢～</view>
+          
+            <view class='flex flex-bet'>
+            <view class='maker'>
+              <view class='price'>
+              ¥16.9
+              </view>
+               <view class='old-price ml-10'>
+              ¥16.9
+              </view>
+            </view>
+            <view><image class='add' src='../../static/btn_add.png' mode="widthFix"></image></view>
+            </view>
+        </view>
+        
+           </view>
+<image class='loadMore' src='../../static/msg_img.png' mode="widthFix"></image>

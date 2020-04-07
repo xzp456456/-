@@ -1,2 +1,54 @@
 <!--pages/classify/index.wxml-->
-<text>pages/classify/index.wxml</text>
+<view class="main">
+
+<view class="type">
+    <view class="ol">时令水果</view>
+    <view class="ol">热带水果</view>
+    <view class="ol">热带水果</view>
+    <view class="ol">热带水果</view>
+    <view class="ol">热带水果</view>
+</view>
+<view class="item">
+    <view class="list">
+      <image class="fled" src="../../static/pt.png" mode="widthFix"></image>
+      <view class="text">苹果</view>
+    </view>
+     <view class="list">
+      <image class="fled" src="../../static/pt.png" mode="widthFix"></image>
+      <view class="text">苹果</view>
+    </view>
+     <view class="list">
+      <image class="fled" src="../../static/pt.png" mode="widthFix"></image>
+      <view class="text">苹果</view>
+    </view>
+    <view class="list">
+      <image class="fled" src="../../static/pt.png" mode="widthFix"></image>
+      <view class="text">苹果</view>
+    </view> 
+     <view class="list">
+      <image class="fled" src="../../static/pt.png" mode="widthFix"></image>
+      <view class="text">苹果</view>
+    </view> 
+     <view class="list">
+      <image class="fled" src="../../static/pt.png" mode="widthFix"></image>
+      <view class="text">苹果</view>
+    </view> 
+     <view class="list">
+      <image class="fled" src="../../static/pt.png" mode="widthFix"></image>
+      <view class="text">苹果</view>
+    </view>   
+     <view class="list">
+      <image class="fled" src="../../static/pt.png" mode="widthFix"></image>
+      <view class="text">苹果</view>
+    </view> 
+     <view class="list">
+      <image class="fled" src="../../static/pt.png" mode="widthFix"></image>
+      <view class="text">苹果</view>
+    </view> 
+     <view class="list">
+      <image class="fled" src="../../static/pt.png" mode="widthFix"></image>
+      <view class="text">苹果</view>
+    </view> 
+</view>
+
+</view>

@@ -1,0 +1,40 @@
+<!--pages/serve-order/index.wxml-->
+<view class="container">
+  <view class="item">
+    <view class="list">
+      <view class="title">[仅退款] 待审核</view>
+      <view class="desc">
+      <view class="flex flex-row">
+        <image class="descImg" src="../../static/pt.png" mode="widthFix"></image>
+        <view class="shuigu">
+       <text class="height">A级-金美人哈密瓜（中）1个/约1300 -1500g</text>
+       <text class="out">退款金额：¥13.3</text>
+        </view>
+        </view>
+        <view class="x">x1</view>
+      </view>
+      <view class="bottom">
+        <view class="btn">查看详情</view>
+      </view>
+    </view>
+     
+     </view>
+     <view class="item">
+     <view class="list">
+      <view class="title">[仅退款] 退款成功</view>
+      <view class="desc">
+      <view class="flex flex-row">
+        <image class="descImg" src="../../static/pt.png" mode="widthFix"></image>
+        <view class="shuigu">
+       <text class="height">A级-金美人哈密瓜（中）1个/约1300 -1500g</text>
+       <text class="out">退款金额：¥13.3</text>
+        </view>
+        </view>
+        <view class="x">x1</view>
+      </view>
+      <view class="bottom">
+        <view class="btn">查看详情</view>
+      </view>
+    </view>
+  </view>
+</view>
