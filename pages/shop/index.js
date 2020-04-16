@@ -29,7 +29,14 @@ Page({
   allSelectData(){
     let query = wx.createSelectorQuery()
     query.selectAll('.deplay').boundingClientRect(res => {
-      console.log(res)
+      let arr = res.map(item=>{
+        return item.dataset.id
+      })
+      this.setData({
+        allSelect: arr,
+        shopNum:arr
+      })
+      console.log(this.data.allSelect)
     }).exec()
   },
   deleteCart(){
