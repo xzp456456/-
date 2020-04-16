@@ -1,18 +1,38 @@
 // pages/classify/index.js
+import wxRequest from '../../utils/request.js'
+import api from '../../utils/api.js'
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    list:{},
+    level:2
   },
-
+  getCategory(){
+    wxRequest.getRequest(api.category(), {
+      level:this.data.level
+    })
+      .then((res) => {
+        console.log(res)
+        this.setData({
+          list: res.data.list,
+          child: res.data.list[0].childlist
+        })
+      })
+  },
+  getChild(e){
+    console.log(e)
+    this.setData({
+      child: e.currentTarget.dataset.item
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getCategory()
   },
 
   /**

@@ -2,18 +2,18 @@
 <view class="main">
 
 <view class="type">
-    <view class="ol">时令水果</view>
+    <view class="ol" wx:for="{{list}}" data-item="{{item.childlist}}" bindtap="getChild">{{item.name}}</view>
+    <!-- <view class="ol">热带水果</view>
     <view class="ol">热带水果</view>
     <view class="ol">热带水果</view>
-    <view class="ol">热带水果</view>
-    <view class="ol">热带水果</view>
+    <view class="ol">热带水果</view> -->
 </view>
 <view class="item">
-    <view class="list">
-      <image class="fled" src="../../static/pt.png" mode="widthFix"></image>
-      <view class="text">苹果</view>
+    <view class="list" wx:for="{{child}}">
+      <image class="fled" src="{{item.image}}"  mode="widthFix"></image>
+      <view class="text">{{item.name}}</view>
     </view>
-     <view class="list">
+     <!-- <view class="list">
       <image class="fled" src="../../static/pt.png" mode="widthFix"></image>
       <view class="text">苹果</view>
     </view>
@@ -48,7 +48,7 @@
      <view class="list">
       <image class="fled" src="../../static/pt.png" mode="widthFix"></image>
       <view class="text">苹果</view>
-    </view> 
+    </view>  -->
 </view>
 
 </view>

@@ -2,16 +2,16 @@
 <view>
    <swiper 
         autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-        <block wx:for="{{background}}" wx:key="*this">
+        <block wx:for="{{info.images}}" wx:key="*this">
           <swiper-item>
-            <image class='banner'  class='zwt' src='../../static/banner.png' mode="widthFix"></image>
+            <image class='banner'  class='zwt' src='{{item.url}}' mode="widthFix"></image>
           </swiper-item>
         </block>
       </swiper>
 </view>
 <view class='maker'>
 <view class='flex mut'>
-<text class='title'>泰国金枕榴莲3-10斤 新鲜水果金枕头带 壳猫山王巴掌榴莲 顺丰包邮</text>
+<text class='title'>{{ info.name }}</text>
 <view>
 <view class='flex share-icon'>
 <image class='share' src='../../static/icon_share.png'></image>
@@ -22,19 +22,19 @@
 </view>
 <view class='row'>
 <view class='desc'>
-  新鲜水果金枕头，带壳
+  {{info.shot_desc}}
 </view>
 <view class='flex flex-row price'>
-   <view class='money'>21.9</view>
-    <view class='oldPrice'>¥23.1</view>
+   <view class='money'>{{info.sale_price}}</view>
+    <view class='oldPrice'>¥{{info.market_price}}</view>
 </view>
 </view>
 <view class='yunying'>
   <view>
-  库存：209件
+  库存：{{info.count_stock}}件
   </view>
     <view>
-  销量：203件
+  销量：{{info.count_sales}}件
   </view>
 </view>
 <view class='boder mat'>
@@ -51,8 +51,17 @@
 </view>
 <view class='row'>
   <view class='bor'>为您推荐</view>
-  <view class='flex flex-row flex-wrap wap'>
-    <view class='tj'>
+  <view class='flex flex-row flex-wrap wap' >
+    <view class='tj' wx:for='{{info.recommend}}'>
+      <image class='mode' src='{{item.image.url}}' mode="widthFix"></image>
+      <view class='titles'>{{item.name}}</view>
+      <view class='gg'>200g/份</view>
+      <view class='thingPrice'>
+      <text class='dataPrice'>¥{{item.sale_price}}</text>
+      <image src='../../static/btn_add.png' class='add' mode="widthFix"></image>
+      </view>
+    <!-- </view> -->
+      <!-- <view class='tj'>
       <image class='mode' src='../../static/pt.png' mode="widthFix"></image>
       <view class='title'>东方红苹果（大）</view>
       <view class='gg'>200g/份</view>
@@ -95,16 +104,7 @@
       <view class='thingPrice'>
       <text class='dataPrice'>¥9.9</text>
       <image src='../../static/btn_add.png' class='add' mode="widthFix"></image>
-      </view>
-    </view>
-      <view class='tj'>
-      <image class='mode' src='../../static/pt.png' mode="widthFix"></image>
-      <view class='title'>东方红苹果（大）</view>
-      <view class='gg'>200g/份</view>
-      <view class='thingPrice'>
-      <text class='dataPrice'>¥9.9</text>
-      <image src='../../static/btn_add.png' class='add' mode="widthFix"></image>
-      </view>
+      </view> -->
     </view>
   </view>
 </view>
@@ -116,7 +116,7 @@
   <view class='bor'>商品详情</view>
 </view>
 <view class='row'>
-  <view class='listType'>
+  <!-- <view class='listType'>
     <view class='shuxing'>产地</view>
     <view class='jieshao'>泰国</view>
   </view>
@@ -135,28 +135,29 @@
   <view class='listType'>
     <view class='shuxing'>营养价值</view>
     <view class='jieshao'></view>
-  </view>
-  <view class='listType'>
+  </view> -->
+  <!-- <view class='listType'>
     <view class='shuxing'>温馨提示</view>
     <view class='jieshao'>盖品种青壳就熟了</view>
+  </view> -->
   </view>
-  </view>
-  <view class='showPc'>
-    <image src='../../static/pt.png' mode="widthFix"></image>
+  <view class='showPc' wx:for='{{info.app_desc}}'>
+    <image  src='{{item.image.url}}' mode="widthFix"></image>
+    <text>{{info.text}}</text>
   </view>
 </view>
 
 <view  class='pay'>
 <view  class='flex flex-row flex-space item-center'>
-<view>
- <image class='xin' src='../../static/mall_icon_collection1.png'></image>
- <view class='pay-xin'>收藏</view>
+<view bindtap="favorite">
+ <image class='xin' src='{{info.favorite_id == 0?"../../static/mall_icon_collection2.png":"../../static/mall_icon_collection1.png"}}'></image>
+ <view class='{{info.favorite_id == 0?"payShop":"pay-xin"}}'>收藏</view>
 </view>
-<view> <image class='che' src='../../static/mall_icon_shop.png'></image>
- <view class='payShop'>购物车</view>
+<view class="poder"><view class="count" wx:if='{{count>0}}'>{{count}}</view> <image class='che' src='../../static/mall_icon_shop.png'></image>
+ <view class='payShop' >购物车</view>
  </view>
 <view class='flex flex-row'>
-  <view class='joinShop'>加入购物车</view>
+  <view class='joinShop' bindtap="joinCart">加入购物车</view>
   <view class='payAdd' bindtap='actionSheetTap'>立即下单</view>
 </view>
 </view>
@@ -170,10 +171,10 @@
 <action-sheet hidden="{{onOff}}" >
 <view class='model'>
     <view class='flex flex-row flex-space '>
-      <image  src='../../static/pt.png' class='mang' mode="widthFix"></image>
+      <image  src='{{info.images[0].url}}' class='mang' mode="widthFix"></image>
      <view>
-      <view class='text'>泰国金枕榴莲3-10斤 新鲜水果金枕 头带壳猫山王巴掌榴莲 顺丰包邮</view>
-      <view class='payPrice'>¥29.6</view>
+      <view class='text'>{{info.name}}</view>
+      <view class='payPrice'>¥{{info.sale_price}}</view>
       </view>
       <image class='close' bindtap='btnclick' src='../../static/icon_close.png'  mode="widthFix"></image>
     </view>
@@ -182,17 +183,17 @@
     <view>
 
       <view class='gou'>购买数量</view>
-      <view class='kucun'>库存：145</view>
+      <view class='kucun'>库存：{{info.left_stock}}</view>
       </view>
     
     <view class='num'>
-      <image class='btn' src='../../static/btn_plus.png'></image>
-      <view class='shuliang'>2</view>
-      <image class='btn'  src="../../static/btn_add-1.png"></image>
+      <image class='btn' bindtap="put"  src='../../static/btn_plus.png'></image>
+      <view class='shuliang' >{{countPay}}</view>
+      <image class='btn' bindtap="add"   src="../../static/btn_add-1.png"></image>
     </view>
     </view>
     </view>
-    <button class='read'>确认</button>
+    <button class='read' bindtap="payOrder">确认</button>
    </view>
 </action-sheet>
 

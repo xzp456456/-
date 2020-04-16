@@ -1,31 +1,38 @@
 <!--pages/coupon/index.wxml-->
 <view class='container'>
-<view class='list'>
+<view class='list' wx:for='{{list}}'>
   <image class='wid' src='../../static/coupon_img.png' mode="widthFix"></image>
     <view class='flexd'>
     <view class='textMon'>
-     <view class='mon'>
+       <view class='mon' wx:if='{{item.coupon_type === 1}}'>
      <text class='fu'>¥</text>
-     <text class='money'>6</text>
+     <text class='money'>{{ filters.toInt(item.discount) }}</text>
      </view>
-     <view class='type'>满减劵</view>
+      <view class='mon' wx:if='{{item.coupon_type === 2}}'>
+     
+     <text class='money'>{{item.rate*10}}</text>
+     <text class='fu'>折</text>
+    
+     
+     </view>
+     <view class='type' >{{item.coupon_type === 1?'现金券':'折扣券'}}</view>
 
     </view>
 
     <view class='ma-pd'>
       <view class='flex flex-row flex-bet'>
-      <text class='sizeType'>新用户大礼包</text>
+      <text class='sizeType'>{{item.title}}</text>
       <image class='select' src='../../static/icon_select_def.png'></image>
       
       </view>
-      <view class='manjian'>·满99元可用</view>
-      <view class='timeDay'>·有效期2019-12-13 至 2020-01-01</view>
+      <view class='manjian'>{{item.desc}}</view>
+      <view class='timeDay'>·有效期{{item.use_start_time}} 至 {{item.use_end_time}}</view>
     </view>
 
     </view>
 </view>
 
-<view class='list'>
+<!-- <view class='list'>
   <image class='wid' src='../../static/coupon_img.png' mode="widthFix"></image>
     <view class='flexd'>
     <view class='textMon'>
@@ -72,8 +79,8 @@
       <view class='timeDayMode'>·有效期2019-12-13 至 2020-01-01</view>
     </view>
 
-    </view>
-</view>
+    </view> 
+</view>-->
 <view>
   <button class='btn'>确认使用</button>
 </view>

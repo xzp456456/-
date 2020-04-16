@@ -1,8 +1,9 @@
 // pagesUser/login/login.js
 
 const app = getApp();
-const {req, showLoading, showToast} = app.globalData;
-
+const { showLoading, showToast, showModal } = require("../../utils/util.js");
+import wxRequest from '../../utils/request.js'
+import api from '../../utils/api.js'
 Page({
 
   /**
@@ -116,7 +117,9 @@ Page({
                 wx.getUserInfo({
                   success: (res) => {
                     showLoading("授权中...");
-                    req.user.wechatLogin({
+                    console.log(js_code)
+                    console.log(res)
+                    wxRequest.postRequest(api.login(),{
                       "js_code": js_code,
                       "encryptedData": res.encryptedData,
                       "iv": res.iv
@@ -125,35 +128,19 @@ Page({
                         wx.hideLoading();
                         if(res.status == 1){
                           wx.setStorageSync("isAuthSuccess", true);
-                          if(res.data.bind_oauth_id != "0" && res.data.bind_oauth_id != ""){
-                            wx.setStorageSync("bindOauthId", res.data.bind_oauth_id);
-                            showToast("授权成功，立即绑定手机");
-                            setTimeout(() => {
-                              this.setData({
-                                bindOauthId: res.data.bind_oauth_id,
-                                authWechatInfo: true
-                              });
-                            }, 2000);
-                          } else {
-                            let {user_id, access_token, is_vip} = res.data;
-                            wx.setStorageSync("loginType", "wechat");
-                            wx.setStorageSync("userId", user_id);
-                            wx.setStorageSync("mpSessionId", access_token);
-                            if(is_vip == 1){
-                              wx.setStorageSync("isVip", true);
-                            } else {
-                              wx.setStorageSync("isVip", false);
-                            }
-                            showToast("登录成功");
-                            setTimeout(() => {
-                              app.loginCallBack();
-                            }, 2000);
-                          }
+                          wx.setStorageSync('access_token', res.data.access_token)
+                          wx.setStorageSync('bindOauthId', res.data.bind_oauth_id)
+                          showToast("授权成功，立即绑定手机");
+                          setTimeout(() => {
+                            this.setData({
+                              bindOauthId: res.data.bind_oauth_id,
+                              authWechatInfo: true
+                            });
+                          }, 2000);
                         } else {
                           showToast(res.msg);
                         }
                       })
-                      .catch(req.err.show);
                   },
                   fail: () => {
                     showToast("获取用户信息失败");
@@ -175,35 +162,29 @@ Page({
   },
   /*获取手机号*/
   getPhoneNumber(e) {
-    if(e.detail.encryptedData){
+    if (e.detail.encryptedData) {
       showLoading("登录中...");
-      req.user.getPhoneNumber({
-        "promo_code": this.data.promo_code,
+      wxRequest.postRequest(api.bindMobile(),{
         "bind_oauth_id": this.data.bindOauthId || wx.getStorageSync("bindOauthId"),
         "encryptedData": e.detail.encryptedData,
         "iv": e.detail.iv
       })
         .then((res) => {
           wx.hideLoading();
-          if(res.status == 1){
-            let {user_id, access_token, is_vip} = res.data;
+          if (res.status == 1) {
+            let { user_id, access_token } = res.data;
             wx.setStorageSync("loginType", "wechat");
             wx.setStorageSync("userId", user_id);
-            wx.setStorageSync("mpSessionId", access_token);
-            if(is_vip == 1){
-              wx.setStorageSync("isVip", true);
-            } else {
-              wx.setStorageSync("isVip", false);
-            }
+            wx.setStorageSync("access_token", access_token);
             showToast("登录成功");
-            setTimeout(() => {
-              app.loginCallBack();
-            }, 2000);
+            wx.redirectTo({
+             url: '/pages/me/index',
+           })
           } else {
             showToast(res.msg);
           }
         })
-        .catch(req.err.show);
+       
     } else {
       showToast("允许授权方可登录");
     }

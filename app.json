@@ -1,9 +1,10 @@
 {
   "pages": [
-    "pages/shop/index",
+    "pages/index/index",
+    "pages/help/index",
+    "pages/search/index",
     "pages/classify/index",
     "pages/help-detail/index",
-    "pages/help/index",
     "pages/manager/index",
     "pages/add-address/index",
     "pages/address/index",
@@ -28,8 +29,7 @@
     "pages/shop-list/index",
     "pages/business/index",
     "pages/login/index",
-    "pages/index/index",
-    "pages/search/index"
+    "pages/shop/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

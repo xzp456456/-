@@ -11,23 +11,8 @@
       热门搜索
     </view>
     <view class='text-name'>
-        <view class='gjc'>
-        丹东草莓
-        </view>
-        <view class='gjc'>
-        丹东草莓
-        </view>
-           <view class='gjc'>
-        丹东草莓
-        </view>
-        <view class='gjc'>
-        丹东草莓
-        </view>
-           <view class='gjc'>
-        丹东草莓
-        </view>
-        <view class='gjc'>
-        丹东草莓
+        <view class='gjc' wx:for="{{list}}" >
+        {{item.hot_word}}
         </view>
     </view>
 </view>

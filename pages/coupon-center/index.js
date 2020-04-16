@@ -1,20 +1,38 @@
 // pages/coupon/index.js
+import wxRequest from '../../utils/request.js'
+import api from '../../utils/api.js'
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    list:{}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getList()
   },
-
+  getCoupon(e){
+    let coupon_id = e.currentTarget.dataset.id
+    console.log(e)
+    wxRequest.postRequest(api.getcoupon(), { coupon_id })
+    .then(res=>{
+        console.log(e)
+    })
+  },
+  getList(){
+    wxRequest.getRequest(api.getCouponsByUid(),{})
+    .then(res=>{
+      console.log(res)
+      this.setData({
+        list:res.data.data
+      })
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

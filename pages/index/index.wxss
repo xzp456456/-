@@ -74,6 +74,7 @@ color:rgba(46,145,9,1);
 
 .img-width{
   width: 100%;
+  height: 260rpx !important;
 }
 
 .swiper{
@@ -203,9 +204,9 @@ line-height:33rpx;
 
 .list-thing{
   width:335rpx;
-height:578rpx;
 background:rgba(255,255,255,1);
 border-radius:10rpx;
+padding-bottom: 20rpx;
 margin-bottom: 20rpx;
 }
 
@@ -222,6 +223,10 @@ font-family:PingFangSC-Regular,PingFang SC;
 font-weight:400;
 color:rgba(17,17,17,1);
 padding-bottom: 20rpx;
+width: 300rpx;
+overflow: hidden;
+text-overflow:ellipsis;
+white-space: nowrap;
 }
 
 .p-text{
@@ -320,6 +325,10 @@ font-family:PingFangSC-Regular,PingFang SC;
 font-weight:400;
 color:rgba(17,17,17,1);
 margin-bottom: 10rpx;
+width: 400rpx;
+overflow: hidden;
+text-overflow:ellipsis;
+white-space: nowrap;
 }
 
 .desc{

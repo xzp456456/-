@@ -17,15 +17,15 @@
    <swiper
         autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
         <block wx:for="{{background}}" wx:key="*this">
-          <swiper-item>
-            <image class='img-width' src='../../static/banner.png' mode="widthFix"></image>
+          <swiper-item >
+            <image class='img-width' src='{{item.banner}}' mode="widthFix"></image>
           </swiper-item>
         </block>
       </swiper>
  </view>
  </view>
  <view class='list'>
-    <view class='li'>
+    <view class='li' bindtap="goinList">
         <view class='list-child'></view>
         <text>热带水果</text>
     </view>
@@ -70,7 +70,7 @@
 </view>
 
  <view class='flex more-mode flex-center'>
- <text class='more'>更多</text>
+ <text class='more' bindtap="getMore" >更多</text>
  <image class='back' src='../../static/icon_more.png' ></image>
  </view>
 
@@ -80,10 +80,10 @@
  </view>
 
  <view class='produce'>
- <view class='list-thing'>
-    <image class='zwt' src='../../static/pt.png' mode="widthFix"></image>
+ <view class='list-thing' wx:for='{{seckill}}'>
+    <image class='zwt' src='{{item.image}}' mode="widthFix"></image>
     <view class='mt'>
-    <view class='p-name'>进口西梅 约480-500g</view>
+    <view class='p-name'>{{item.name}}</view>
     <view class='p-text'>果体微软时口感更佳</view>
     <view class='sha'>
       <view class='manjian'>满199减50</view>
@@ -153,7 +153,7 @@
  </view>
  </view>
  </view>
-<view class='guanggao'>
+<view class='guanggao' bindtap="goto">
     <image src='../../static/home_img_ad.png' mode="widthFix"></image>
 </view>
 
@@ -176,14 +176,13 @@
  </view>
 
 <view>
-    <view class='main'>
-        <image class='prImg' src='../../static/pt.png' mode="widthFix"></image>
+    <view class='main' wx:for="{{list}}">
+        <image class='prImg' src='{{item.image}}' mode="widthFix"></image>
         <view class='data-list'>
-            <view class='title'>进口火龙果 1个约/450-50…</view>
-            <view class='desc'>吃完来个花山竹更下火噢～</view>
+            <view class='title'>{{item.name}}</view>
+            <view class='desc'>{{item.shot_desc}}</view>
             <view class='sha'>
-              <view class='manjian'>满199减50</view>
-              <view class='manjian'>满199减50</view>
+              <view class='manjian' wx:for='{{item.tags}}' wx:for-item='li'>{{li.name}}</view>
             </view>
             <view class='flex flex-bet'>
             <view class='maker'>

@@ -1,20 +1,35 @@
 // pages/collect/index.js
+import wxRequest from '../../utils/request.js'
+import api from '../../utils/api.js'
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    list:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getList()
   },
-
+  getList(){
+    wxRequest.getRequest(api.favorite(),{})
+    .then(res=>{
+      this.setData({
+        list:res.data.list
+      })
+    })
+  },
+  gotoDetail(e){
+    let id = e.currentTarget.dataset.id
+    wx.navigateTo({
+      url: '/pages/detail/index?goods_id='+id
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

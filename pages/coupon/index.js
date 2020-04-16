@@ -1,4 +1,6 @@
 // pages/coupon/index.js
+import wxRequest from '../../utils/request.js'
+import api from '../../utils/api.js'
 Page({
 
   /**
@@ -26,7 +28,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.getCoupon()
   },
 
   /**
@@ -35,7 +37,14 @@ Page({
   onHide: function () {
 
   },
-
+  getCoupon(){
+    wxRequest.getRequest(api.getcoupon(),{})
+    .then(res=>{
+      this.setData({
+        list:res.data.list
+      })
+    })
+  },
   /**
    * 生命周期函数--监听页面卸载
    */

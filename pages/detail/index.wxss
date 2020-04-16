@@ -8,7 +8,11 @@
 height:27rpx;
 }
 
-.title{
+.titles{
+  overflow: hidden;
+text-overflow:ellipsis;
+white-space: nowrap;
+  width: 240rpx;
   font-size:32rpx;
 font-family:PingFangSC-Medium,PingFang SC;
 font-weight:500;
@@ -33,7 +37,12 @@ color:rgba(102,102,102,1);
 }
 
 .title{
-  width:562rpx;
+  width:562rpx; 
+  font-size:32rpx;
+font-family:PingFangSC-Medium,PingFang SC;
+font-weight:500;
+color:rgba(17,17,17,1);
+margin-top: 20rpx;
 }
 
 
@@ -280,6 +289,26 @@ font-weight:400;
 color:rgba(17,17,17,1);
 }
 
+.poder{
+  position: relative;
+}
+
+.count{
+  width:26rpx;
+height:26rpx;
+border-radius:50%; 
+text-align: center;
+line-height: 26rpx;
+position: absolute;
+font-size:16rpx;
+font-family:PingFangSC-Medium,PingFang SC;
+font-weight:500;
+color:rgba(255,255,255,1);
+right: 0;
+top: 0;
+background:rgba(255,73,73,1);
+}
+
 .item-center{
   align-items: center;
   width: 100%;
@@ -339,7 +368,6 @@ color:rgba(17,17,17,1);
 font-family:PingFangSC-Regular,PingFang SC;
 font-weight:400;
 color:rgba(17,17,17,1);
-height: 100rpx;
 }
 
 .model{

@@ -1,7 +1,13 @@
 <!--pages/seckill/index.wxml-->
 <view class='container'>
   <view class='bgType'>
-    <view class='dest'>
+    <view class='dest' wx:for="{{time}}" >
+      <view class='textColor'>{{item.config}}</view>
+      <view class='type' wx:if="{{item.status==1}}">正在抢购</view>
+      <view class='type' wx:if="{{item.status==2}}">还未开抢</view>
+      <view class='type' wx:if="{{item.status==3}}">已经抢完</view>
+    </view>
+     <!-- <view class='dest'>
       <view class='textColor'>09:00</view>
       <view class='type'>正在抢购</view>
     </view>
@@ -12,11 +18,7 @@
      <view class='dest'>
       <view class='textColor'>09:00</view>
       <view class='type'>正在抢购</view>
-    </view>
-     <view class='dest'>
-      <view class='textColor'>09:00</view>
-      <view class='type'>正在抢购</view>
-    </view>
+    </view> -->
   </view>
  <view class='flex center mt-main'>
      <view>
@@ -33,19 +35,19 @@
      </view>
  </view>
 
-  <view class='flex flex-row list-view space'>
-    <image class='widt' src='../../static/pt.png' mode="widthFix"></image>
+  <view class='flex flex-row list-view space' wx:for="{{list}}">
+    <image class='widt' src='{{item.image}}' mode="widthFix"></image>
     <view class='space-list'>
-      <view class='title'>进口火龙果 1个/450-500g</view>
-      <view class='numP'>每人限购2份</view>
+      <view class='title'>{{item.name}}</view>
+      <view class='numP'>每人限购{{item.limit_num}}份</view>
       <view class='flex flex-row flex-center item-center'>
         <view class='jindu'></view>
-        <text class='txtN'>剩余58%</text>
+        <text class='txtN'>剩余{{item.left_rate}}%</text>
       </view>
       <view class='flex flex-row flex-bet mtTop'>
         <view class='flex flex-row item-center'>
-          <view class='priceColor'>¥16.9</view>
-           <view class='ck'>¥19.3</view>
+          <view class='priceColor'>¥{{item.sale_price}}</view>
+           <view class='ck'>¥{{item.market_price}}</view>
         </view>
         <view class='payJoin'>立即抢购</view>
       </view>

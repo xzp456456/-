@@ -1,18 +1,20 @@
 // pages/search/index.js
+import wxRequest from '../../utils/request.js'
+import api from '../../utils/api.js'
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    list:{}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getHot()
   },
 
   /**
@@ -21,7 +23,15 @@ Page({
   onReady: function () {
 
   },
-
+  getHot(){
+    wxRequest.postRequest(api.hotSearch(),{})
+    .then((res)=>{
+     // console.log(res)
+      this.setData({
+        list:res.data
+      })
+    })
+  },
   /**
    * 生命周期函数--监听页面显示
    */

@@ -1,13 +1,13 @@
 <!--pages/address/index.wxml-->
 <view class="container">
   <view class="item">
-   <view class="list">
+   <view class="list" wx:for='{{list}}'>
      <view class="flex flex-row row">
-     <view class="xp">小屁孩</view>
+     <view class="xp">{{item.username}}</view>
      <view class="mat">15159212638</view>
      </view>
      <view class="row desc">
-     福建省厦门市集美区软件园三期A区04栋1901(厦门 亿阳汇聚)
+     {{item.province}}{{item.city}}{{item.area}}{{item.address}}
      </view>
      <view class="border">
         <view class="flex flex-row  item-center">
@@ -17,16 +17,16 @@
         <view class="flex flex-row  item-center">
           <view class="flex flex-row  item-center">
           <image class="mos" src="../../static/address_icon_edit.png"  mode="widthFix"></image>
-          <text class="al">编辑</text>
+          <text class="al" bindtap="putData"  data-info="{{item}}"  data-id="{{item.address_id}}">编辑</text>
           </view>
            <view class="flex flex-row  item-center mll">
              <image class="mos" src="../../static/address_icon_edit.png"  mode="widthFix"></image>
-          <text class="al">删除</text>
+          <text class="al" bindtap="readyDelete" data-id="{{item.address_id}}">删除</text>
            </view>
         </view>
      </view>
    </view>
-   <view class="list">
+   <!-- <view class="list">
      <view class="flex flex-row row">
      <view class="xp">小屁孩</view>
      <view class="mat">15159212638</view>
@@ -42,7 +42,7 @@
         <view class="flex flex-row  item-center">
           <view class="flex flex-row  item-center">
           <image class="mos" src="../../static/address_icon_edit.png"  mode="widthFix"></image>
-          <text class="al">编辑</text>
+          <text class="al" >编辑</text>
           </view>
            <view class="flex flex-row  item-center mll">
              <image class="mos" src="../../static/address_icon_edit.png"  mode="widthFix"></image>
@@ -50,9 +50,9 @@
            </view>
         </view>
      </view>
-   </view>
+   </view> -->
   </view>
   <view>
-    <button class="btn">添加收货地址</button>
+    <button class="btn" bindtap="goinAdd">添加收货地址</button>
   </view>
 </view>

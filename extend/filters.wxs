@@ -1,0 +1,20 @@
+var filters = {
+  toInt: function (value) {
+    return parseInt(value)
+  },
+  toNullObj: function (obj){
+    return JSON.stringify(obj)
+  },
+  cheSome:function(id,arr){
+    var bool = false
+    bool = arr.some(function(item){
+      return id === item
+    })
+    return bool
+  }
+}
+module.exports = {
+  toInt: filters.toInt,
+  toNullObj: filters.toNullObj,
+  cheSome: filters.cheSome
+}

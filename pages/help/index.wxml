@@ -4,14 +4,14 @@
     常见问题
   </view>
   <view class="item">
-    <view class="list">
+    <view class="list" wx:for="{{list}}"  bindtap="jumpDetail" data-id="{{item.normal_id}}">
       <view class="flex flex-row item-center">
       <view class="dian"></view>
-      <view class="text">小程序订单如何付款？</view>
+      <view class="text" >{{item.question_title}}</view>
       </view>
       <image class="back" src="../../static/icon_more.png"></image>
-    </view>
-       <view class="list">
+     </view>
+      <!-- <view class="list">
       <view class="flex flex-row item-center">
       <view class="dian"></view>
       <view class="text">订单取消后多久能退款？</view>
@@ -52,7 +52,7 @@
       <view class="text">如何查找想要的生鲜商品？</view>
       </view>
       <image class="back" src="../../static/icon_more.png"></image>
-    </view>
+    </view> -->
       
   </view>
     <view class="flex flex-row mk">

@@ -4,16 +4,16 @@
     <view class='maindata'>
     <view class='poser'>
     <image class='search' src='../../static/icon_search.png' mode="widthFix"></image>
-    <input class='search-input' placeholder='请输入关键字搜索' placeholder-class='placeholder'></input></view>
+    <input class='search-input' bindinput="searchText"  placeholder='请输入关键字搜索' placeholder-class='placeholder'></input></view>
       
-      <view class='search-text'>搜索</view>
+      <view class='search-text' bindtap="search">搜索</view>
     </view>
   
 </view>
 <view class='cate'>
-  <view>综合</view>
-  <view>销量</view>
-  <view class='price'>价格
+  <view bindtap="searchAll" >综合</view>
+  <view bindtap="searchNum">销量</view>
+  <view class='price' bindtap="searchPrice">价格
   <view class='biao'>
    <image class='shang'  src='../../static/sort_sel.png'></image>
     <image class='xia' src='../../static/sort_def.png'></image>
@@ -23,22 +23,22 @@
 </view>
 <view class='container'>
 <view>
-    <view class='main'>
-        <image class='prImg' src='../../static/pt.png' mode="widthFix"></image>
+    <view class='main'  wx:for="{{list}}"  data-id="{{item.goods_id}}"  catchtap="goIndexDetail">
+        <image class='prImg' src='{{item.image}}'   mode="widthFix"></image>
         <view class='data-list'>
-            <view class='title'>进口火龙果 1个约/450-50…</view>
-            <view class='desc'>吃完来个花山竹更下火噢～</view>
+            <view class='title'>{{item.name}}</view>
+            <view class='desc'>{{item.shot_desc}}</view>
             <view class='sha'>
-              <view class='manjian'>满199减50</view>
-              <view class='manjian'>满199减50</view>
+              <view class='manjian' wx:for="{{item.activity}}" wx:for-item="{{child}}">{{child.name}}</view>
+              <!-- <view class='manjian'>满199减50</view> -->
             </view>
             <view class='flex flex-bet'>
             <view class='maker'>
               <view class='price'>
-              ¥16.9
+              ¥{{item.sale_price}}
               </view>
                <view class='old-price ml-10'>
-              ¥16.9
+              ¥{{item.market_price}}
               </view>
             </view>
             <view><image class='add' src='../../static/btn_add.png' mode="widthFix"></image></view>
@@ -46,74 +46,5 @@
         </view>
     </view>
 
-<view class='main'>
-        <image class='prImg' src='../../static/pt.png' mode="widthFix"></image>
-        <view class='data-list'>
-            <view class='title'>进口火龙果 1个约/450-50…</view>
-            <view class='desc'>吃完来个花山竹更下火噢～</view>
-            <view class='sha'>
-              <view class='manjian'>满199减50</view>
-              <view class='manjian'>满199减50</view>
-            </view>
-            <view class='flex flex-bet'>
-            <view class='maker'>
-              <view class='price'>
-              ¥16.9
-              </view>
-               <view class='old-price ml-10'>
-              ¥16.9
-              </view>
-            </view>
-            <view><image class='add' src='../../static/btn_add.png' mode="widthFix"></image></view>
-            </view>
-        </view>
-    </view>
-
-    <view class='main'>
-        <image class='prImg' src='../../static/pt.png' mode="widthFix"></image>
-        <view class='data-list'>
-            <view class='title'>进口火龙果 1个约/450-50…</view>
-            <view class='desc'>吃完来个花山竹更下火噢～</view>
-            <view class='sha'>
-              <view class='manjian'>满199减50</view>
-              <view class='manjian'>满199减50</view>
-            </view>
-            <view class='flex flex-bet'>
-            <view class='maker'>
-              <view class='price'>
-              ¥16.9
-              </view>
-               <view class='old-price ml-10'>
-              ¥16.9
-              </view>
-            </view>
-            <view><image class='add' src='../../static/btn_add.png' mode="widthFix"></image></view>
-            </view>
-        </view>
-    </view>
-    <view class='main'>
-        <image class='prImg' src='../../static/pt.png' mode="widthFix"></image>
-        <view class='data-list'>
-            <view class='title'>进口火龙果 1个约/450-50…</view>
-            <view class='desc'>吃完来个花山竹更下火噢～</view>
-            <view class='sha'>
-              <view class='manjian'>满199减50</view>
-              <view class='manjian'>满199减50</view>
-            </view>
-            <view class='flex flex-bet'>
-            <view class='maker'>
-              <view class='price'>
-              ¥16.9
-              </view>
-               <view class='old-price ml-10'>
-              ¥16.9
-              </view>
-            </view>
-            <view><image class='add' src='../../static/btn_add.png' mode="widthFix"></image></view>
-            </view>
-        </view>
-    </view>
-    <image class='loadMore' src='../../static/msg_img.png' mode="widthFix"></image>
-</view> 
-
+ </view>
 </view>

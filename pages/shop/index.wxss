@@ -2,6 +2,7 @@
 width: 100%;
   position: absolute;
   background:rgba(245,245,245,1);
+  min-height: 100%;
 }
 .row{
   width: 90%;
@@ -99,7 +100,10 @@ padding: 0 18rpx;
 font-family:PingFangSC-Regular,PingFang SC;
 font-weight:400;
 color:rgba(17,17,17,1);
-width: 100%;
+width:400rpx;
+overflow: hidden;
+text-overflow:ellipsis;
+white-space: nowrap;
 padding-bottom: 20rpx;
 }
 

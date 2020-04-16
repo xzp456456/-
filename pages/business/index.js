@@ -1,4 +1,6 @@
 // pages/business/index.js
+import wxRequest from '../../utils/request.js'
+import api from '../../utils/api.js'
 Page({
 
   /**

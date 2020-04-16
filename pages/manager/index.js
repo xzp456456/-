@@ -1,11 +1,13 @@
 // pages/manager/index.js
+import wxRequest from '../../utils/request.js'
+import api from '../../utils/api.js'
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    list:''
   },
 
   /**
@@ -26,8 +28,8 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
-  },
+    this.getUserMar()
+  },  
 
   /**
    * 生命周期函数--监听页面隐藏
@@ -35,7 +37,15 @@ Page({
   onHide: function () {
 
   },
-
+  getUserMar(){
+    wxRequest.getRequest(api.salesman(),{})
+    .then(res=>{
+      console.log(res)
+      this.setData({
+        list: res.data.list
+      })
+    })
+  },
   /**
    * 生命周期函数--监听页面卸载
    */

@@ -1,31 +1,32 @@
 <!--logs.wxml-->
+<wxs src="../../extend/filters.wxs" module="filters" />
 <view class="container">
- <view class="mar row"> 清空购物车</view>
+ <view class="mar row"  bindtap="deleteCart"> 清空购物车</view>
 
 
- <view class="item">
-  <view class="list">
-  <view class="title">
+ <view class="item" id="item" wx:for='{{list}}' wx:for-item='item' wx:key='{{index}}'>
+  <view class="list"  >
+  <view class="title"  wx:if='{{filters.toNullObj(item.activity) !== "{}"}}'>
    <image class="quan" src="../../static/icon_select_def.png" mode="widthFix"></image>
    <view class="mj">满减</view>
-   <view class="ym">已满199，已减20</view>
+   <view class="ym">{{item.activity.title}}</view>
   </view>
-  <view class="flex flex-row deplay">
-    <image class="gou" src="../../static/icon_select_sel.png"></image>
-    <image class="ad" src="../../static/pt.png" mode="widthFix"></image>
+  <view class="flex flex-row deplay" wx:for='{{item.goods}}' wx:for-item='li'  data-id="{{li.cart_id}}">
+    <image class="gou" src='{{filters.cheSome(li.cart_id,shopNum)?"../../static/icon_select_sel.png":"../../static/icon_select_def.png"}}' data-cart_id="{{li.cart_id}}" bindtap="getShop"></image>
+    <image class="ad" src="{{li.image}}"  mode="widthFix"></image>
     <view>
-    <view class="desc">陕西沙瓢水果番茄4斤12/16枚…</view>
-    <view class="all" >满199减20</view>
+    <view class="desc">{{li.goods_name}}</view>
+    <view class="all" wx:for='{{li.activity}}' wx:for-item='ul'>{{ul.name}}</view>
     <view class="flex flex-row item-center">
       <view class="flex flex-row flex-bet item-center wid">
       <view class="flex flex-row item-center">
-        <view class="mon">69.9</view>
-          <view class="price">¥99.0</view>
+        <view class="mon">{{li.sale_price}}</view>
+          <view class="price">¥{{li.market_price}}</view>
           </view>
           <view class="flex flex-row">
-      <image class="jian" src="../../static/btn_plus.png"></image>
-      <view class="num">1</view>
-      <image class="jia" src="../../static/btn_add-1.png"></image>
+      <image class="jian" catchtap="cartUpdatePut"  data-num="{{li.buy_num}}" data-id="{{li.cart_id}}" src="../../static/btn_plus.png"></image>
+      <view class="num">{{li.buy_num}}</view>
+      <image class="jia" catchtap="cartUpdateAdd" data-num="{{li.buy_num}}" data-id="{{li.cart_id}}" src="../../static/btn_add-1.png"></image>
       </view>
       </view>
       </view>
@@ -33,35 +34,15 @@
     </view>
     
   </view>
-    <view class="flex flex-row deplay">
-    <image class="gou" src="../../static/icon_select_sel.png"></image>
-    <image class="ad" src="../../static/pt.png" mode="widthFix"></image>
-    <view>
-    <view class="desc">陕西沙瓢水果番茄4斤12/16枚…</view>
-    <view class="all" >满199减20</view>
-    <view class="flex flex-row item-center">
-      <view class="flex flex-row flex-bet item-center wid">
-      <view class="flex flex-row item-center">
-        <view class="mon">69.9</view>
-          <view class="price">¥99.0</view>
-          </view>
-          <view class="flex flex-row">
-      <image class="jian" src="../../static/btn_plus.png"></image>
-      <view class="num">1</view>
-      <image class="jia" src="../../static/btn_add-1.png"></image>
-      </view>
-      </view>
-      </view>
       
-    </view>
-    
-  </view>
+  
+
   </view>
 
 
   
  </view>
- <view class="item">
+ <!-- <view class="item">
   <view class="list">
 
   <view class="flex flex-row deplay">
@@ -110,21 +91,21 @@
 
 
   
- </view>
+ </view> -->
  <view class="kuai"></view>
 </view>
 
 <view class="lving ">
 <view class="row flex flex-row flex-bet item-center">
 <view class="flex flex-row item-center">
-<image class="select" src="../../static/icon_select_def.png"></image>
-<view class="alls">全选</view>
+<image class="select"  src='{{allSelect==shopNum?"../../static/icon_select_sel.png":"../../static/icon_select_def.png"}}'></image>
+<view class="alls" bindtap="allSelectData">全选</view>
 </view>
 <view class="flex flex-row ">
 <view class="te">总计：</view>
-<view class="prices">¥338.0</view>
+<view class="prices">¥{{total}}</view>
 
 </view>
-<view class="btn">去结算(2)</view>
+<view class="btn" bindtap="goinPay">去结算({{count_pay}})</view>
 </view>
 </view>

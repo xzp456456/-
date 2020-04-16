@@ -1,7 +1,8 @@
 <!--pages/help-detail/index.wxml-->
 <view class="title">
-  购买的果品是来农去卖的店员配送的吗？
+  {{title}}
 </view>
 <view class="desc">
-11111111111111111111111111111111111111111111111111111111111
+ <import src="../../extend/wxParse/wxParse.wxml"/>
+    <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
 </view>

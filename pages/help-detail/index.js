@@ -1,23 +1,40 @@
 // pages/help-detail/index.js
+import wxRequest from '../../utils/request.js'
+import api from '../../utils/api.js'
+import WxParse from '../../extend/wxParse/wxParse.js';
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    detail:{}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    console.log(options)
+    this.getDetail(options.normal_id)
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
+  getDetail(id){
+    var that = this;
+    wxRequest.getRequest(api.questionDetail()+id, {})
+      .then((res) => {
+        console.log(res)
+        this.setData({
+          title: res.data.question_title
+        })
+        var article = res.data.question_content;
+        WxParse.wxParse('article', 'html', article, that, 5);
+      })
+    
+  },
   onReady: function () {
 
   },

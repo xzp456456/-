@@ -10,6 +10,11 @@
   background-color: white;
 }
 
+.picker{
+  flex: 1;
+  
+}
+
 .list{
   font-size:30rpx;
 font-family:PingFangSC-Regular,PingFang SC;
@@ -32,7 +37,7 @@ margin-left: 5%;
 .leo{
   width:14rpx;
 height:22rpx;
-
+  margin-right: 3%;
 }
 
 .x{
@@ -47,8 +52,16 @@ font-weight:400;
 color:rgba(187,187,187,1);
 }
 
+.txt{
+  font-size:30rpx;
+font-family:PingFangSC-Regular,PingFang SC;
+font-weight:400;
+color:rgba(187,187,187,1);
+}
+
 .ml-data{
-width: 470rpx;
+width: 450rpx;
+margin-right: 20rpx;
 }
 
 .no-border{
