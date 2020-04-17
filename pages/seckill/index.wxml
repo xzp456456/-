@@ -35,7 +35,7 @@
      </view>
  </view>
 
-  <view class='flex flex-row list-view space' wx:for="{{list}}">
+  <view class='flex flex-row list-view space' wx:for="{{list}}" bindtap="goIndexDetail" data-id="{{item.goods_id}}">
     <image class='widt' src='{{item.image}}' mode="widthFix"></image>
     <view class='space-list'>
       <view class='title'>{{item.name}}</view>

@@ -18,7 +18,7 @@
   </view>
   <view class="list row">
     <view class="label">支付金额</view>
-     <view class="number">¥90.3</view>
+     <view class="number">¥{{info.real_money}}</view>
   </view>
   <view class="list row">
     <view class="label">支付方式</view>
@@ -28,5 +28,5 @@
      </view>
   </view>
 </view>
- <view class="button">确认支付</view>
+ <view class="button" bindtap="pay">确认支付</view>
 </view>

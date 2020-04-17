@@ -1,4 +1,5 @@
 //logs.js
+const app = getApp();
 const util = require('../../utils/util.js')
 import wxRequest from '../../utils/request.js'
 import api from '../../utils/api.js'
@@ -8,12 +9,16 @@ Page({
     list:[],
     total:'',
     shopNum:[],
-    allSelect:[],
-    count_pay:0
+    allSelect:null,
+    count_pay:0,
+    activity_money:100
   },
   goinPay(){
+
+    app.cart_ids = this.data.shopNum
+    app.activity_money = this.data.activity_money
     wx.navigateTo({
-      url: '/pages/address/index',
+      url: '/pages/order-detail/index',
     })
   },
   getCartList(){
@@ -27,6 +32,13 @@ Page({
     })
   },
   allSelectData(){
+    if (this.data.allSelect === this.data.shopNum){
+      this.setData({
+        allSelect: null,
+        shopNum: []
+      })
+      return
+    }
     let query = wx.createSelectorQuery()
     query.selectAll('.deplay').boundingClientRect(res => {
       let arr = res.map(item=>{

@@ -1,13 +1,22 @@
 // pages/Merchant/index.js
+import wxRequest from '../../utils/request.js'
+import api from '../../utils/api.js'
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    info:{}
   },
-
+  agentMsg() {
+    wxRequest.postRequest(api.agentMsg(), {})
+      .then(res => {
+        this.setData({
+          info: res.data
+        })
+      })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -26,7 +35,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.agentMsg()
   },
 
   /**

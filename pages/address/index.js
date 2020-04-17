@@ -103,7 +103,15 @@ Page({
   onPullDownRefresh: function () {
 
   },
-
+  changAddress(e){
+    let id = e.currentTarget.dataset.id
+    wxRequest.postRequest(api.userAddressdefault(),{
+      address_id:id
+    }).then(res=>{
+      console.log(res)
+      this.getList()
+    })
+  },
   /**
    * 页面上拉触底事件的处理函数
    */

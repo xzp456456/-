@@ -87,7 +87,8 @@ margin-top: 30rpx;
 
 .list{
   width:690rpx;
-height:356rpx;
+padding-bottom: 20rpx;
+padding-top:20rpx; 
 background:rgba(255,255,255,1);
 border-radius:10rpx;
 margin: 0 auto;

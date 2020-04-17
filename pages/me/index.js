@@ -1,4 +1,4 @@
-0// pages/me/index.js
+// pages/me/index.js
 import wxRequest from '../../utils/request.js'
 import api from '../../utils/api.js'
 Page({
@@ -11,12 +11,15 @@ Page({
     isAuthSuccess:null,
     isLogin:null
   },
-
+    gotoOrder(){
+      wx.navigateTo({
+        url: '/pages/orderList/index',
+      })
+    },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getUserInfo()
     if (wx.getStorageSync('access_token')){
       this.setData({
         isLogin:true
@@ -28,6 +31,18 @@ Page({
     wx.navigateTo({
       url: url,
     })
+  },
+  goInBuss(e){
+    if (e.currentTarget.dataset.status == -1){
+    wx.navigateTo({
+      url: '/pages/business/index',
+    })
+    }
+    if(e.currentTarget.dataset.status == 0){
+      wx.navigateTo({
+        url: '/pages/Merchant/index',
+      })
+    }
   },
   goto(){
     wx.navigateTo({
@@ -53,17 +68,12 @@ Page({
   onReady: function () {
 
   },
-  agentMsg(){
-    wxRequest.postRequest(api.agentMsg(), {})
-    .then(res=>{
-      console.log(res)
-    })
-  },
+ 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.agentMsg()
+    this.getUserInfo()
   },
 
   /**

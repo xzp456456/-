@@ -11,10 +11,14 @@ var filters = {
       return id === item
     })
     return bool
+  },
+  geTel: function(tel){
+    return tel.substring(0, 3) + "****" + tel.substring(tel.length - 4);
   }
 }
 module.exports = {
   toInt: filters.toInt,
   toNullObj: filters.toNullObj,
-  cheSome: filters.cheSome
+  cheSome: filters.cheSome,
+  geTel: filters.geTel
 }

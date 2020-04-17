@@ -8,7 +8,8 @@ Page({
    */
   data: {
     list:{},
-    level:2
+    level:2,
+    point:0
   },
   getCategory(){
     wxRequest.getRequest(api.category(), {
@@ -25,7 +26,14 @@ Page({
   getChild(e){
     console.log(e)
     this.setData({
-      child: e.currentTarget.dataset.item
+      child: e.currentTarget.dataset.item,
+      point: e.currentTarget.dataset.index
+    })
+  },
+  goToDetail(e){
+    let id = e.currentTarget.dataset.id
+    wx.navigateTo({
+      url: '/pages/shop-list/index?category_id='+id
     })
   },
   /**

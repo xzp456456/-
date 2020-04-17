@@ -1,11 +1,12 @@
 <!--pages/me/index.wxml-->
+<wxs module="filters" src="../../extend/filters.wxs"></wxs>
 <view class="container">
 <view class='me'>
   <view class='flex flex-row row mt' wx:if="{{isLogin}}">
-    <image class='avatar' src='../../static/tx.png'  mode="widthFix"></image>
+    <image class='avatar' src='{{info.avatar}}'  mode="widthFix"></image>
     <view class='ma-left'>
-    <view class='shopName'>Sweet&零食小铺</view>
-    <view class='phone'>绑定手机：151*****638</view>
+    <view class='shopName'>{{userInfo.username}}</view>
+    <view class='phone'>绑定手机：{{filters.geTel(userInfo.mobile)}}</view>
     </view>
   </view>
    <view class='flex flex-row row mt' bindtap="login" wx:if="{{!isLogin}}">
@@ -19,19 +20,19 @@
   我的订单
   </view>
     <view class='row flex flex-row flex-bet'>
-    <view>
+    <view bindtap="gotoOrder">
      <image class='sord' src='../../static/mine_icon_faifukuan.png' mode="widthFix"></image>
      <view class='text'>待付款</view>
     </view>
-     <view>
+     <view bindtap="gotoOrder">
      <image class='sord' src='../../static/mine_icon_daishouhuo.png' mode="widthFix"></image>
      <view class='text'>待收货</view>
     </view>
-     <view>
+     <view bindtap="gotoOrder">
      <image class='sord' src='../../static/mine_icon_tuikuan.png' mode="widthFix"></image>
      <view class='text'>退款/售后</view>
     </view>
-     <view>
+     <view bindtap="gotoOrder">
      <image class='sord' src='../../static/mine_icon_all.png' mode="widthFix"></image>
      <view class='text'>全部订单</view>
     </view>
@@ -39,7 +40,7 @@
   </view>
 </view>
 <view>
-  <view class='main-list'>
+  <view class='main-list' bindtap="goInBuss" data-status="{{userInfo.agent.status}}">
       <view class='li flex flex-row flex-bet row item-center'>
        <view class='flex item-center flex-row'>
        <image class='modeImg' src='../../static/mine_icon_shop.png' mode="widthFix"></image>

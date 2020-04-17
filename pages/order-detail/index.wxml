@@ -10,16 +10,16 @@
 <view class='flex flex-row flex-bet fu'>
   <view class='cancel'>取消订单</view>
   <view class='online'>在线客服</view>
-  <view class='pay'>去付款</view>
+  <view class='pay' bindtap="goToPay">去付款</view>
 </view>
 </view>
 <view class='max' >
     <view class='timein'>预计送达时间：2020-03-20 9:00～10:00</view>
     <view class='row mt'>
-      <view><text class='mobileName'>小屁孩</text> <text class='phone'>15159203758</text> </view>
+      <view><text class='mobileName'>{{info.address.username}}</text> <text class='phone'>{{info.address.mobile}}</text> </view>
       <view>
       <image class='address' src='../../static/order_icon_adderss.png'></image>
-      <text class='addressText'>福建省厦门市集美区软件园三期诚毅大街365 号A区04栋19楼</text>
+      <text class='addressText'>{{info.address.province}}{{info.address.city}}{{info.address.area}}</text>
       </view>
     </view>
 </view>
@@ -29,23 +29,16 @@
     <text class='orderId'>订单编号：18070514570001</text>
     <text class='type'>待付款</text>
    </view>
-   <view class='flex flex-row flex-bet mt-20'>
+   <view class='flex flex-row flex-bet mt-20' wx:for='{{info.goods}}'>
    <view class='flex flex-row '>
-    <image class='produce' src='../../static/pt.png' mode="widthFix"></image>
-    <view class='desc'>A级-千禧圣女果（中）1分/约 480-500g</view>
+    <image class='produce' src='{{item.image}}' mode="widthFix"></image>
+    <view class='desc'>{{item.goods_name}}</view>
     </view>
-    <view class='num'>x1</view>
-   </view>
-   <view class='flex flex-row flex-bet mt-20'>
-   <view class='flex flex-row '>
-    <image class='produce' src='../../static/pt.png' mode="widthFix"></image>
-    <view class='desc'>A级-千禧圣女果（中）1分/约 480-500g</view>
-    </view>
-    <view class='num'>x1</view>
+    <view class='num'>x{{item.buy_num}}</view>
    </view>
   <view class='flex flex-row flex-bet maker m'>
    <view class='ty'>商品金额</view>
-   <view class='mi'>¥102.9</view>
+   <view class='mi'>¥{{info.total_money}}</view>
   </view>
    <view class='flex flex-row flex-bet maker'>
    <view class='ty'>优惠券减免</view>
@@ -53,7 +46,7 @@
   </view>
   <view class='flex flex-row flex-bet maker'>
    <view class='ty bt'>满减</view>
-   <view class='mi'>-¥10.0</view>
+   <view class='mi'>-¥{{info.activity_money}}</view>
   </view>
   <view class='flex flex-row flex-bet maker'>
    <view class='ty'>备注</view>
@@ -63,7 +56,7 @@
    <view class='ty'>后台改价</view>
    <view class='mi'>-¥20.0</view>
   </view>
-  <view class='textRing'>共7件，合计：<text class='priceMoney'>¥90.9</text> </view>
+  <view class='textRing'>共7件，合计：<text class='priceMoney'>¥{{info.real_money}}</text> </view>
   </view>
 </view>
 <view class='modeBottom'>

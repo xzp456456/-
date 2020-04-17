@@ -48,5 +48,19 @@ export default {
 
   deleteCart: () => { return config + '/api/cart/delete' },
 
-  cartUpdate: () => { return config + '/api/cart/update' }
+  cartUpdate: () => { return config + '/api/cart/update' },
+
+  settlement: () => { return config + '/api/order/settlement' },
+
+  myOrder: () => { return config + '/api/order' },
+
+  deliverTime: () => { return config + '/api/config/deliverTime' },
+
+  uploadMsg: () => { return config + '/api/agent/uploadMsg' },
+
+  upload: () => { return config + '/api/upload' },
+  
+  userAddressdefault: () => { return config + '/api/user_address/default' },
+
+  getorder: () => { return config + '/api/order' }
 }   

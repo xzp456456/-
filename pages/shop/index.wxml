@@ -97,9 +97,9 @@
 
 <view class="lving ">
 <view class="row flex flex-row flex-bet item-center">
-<view class="flex flex-row item-center">
-<image class="select"  src='{{allSelect==shopNum?"../../static/icon_select_sel.png":"../../static/icon_select_def.png"}}'></image>
-<view class="alls" bindtap="allSelectData">全选</view>
+<view class="flex flex-row item-center" bindtap="allSelectData">
+<image class="select"  src='{{filters.toNullObj(allSelect)==filters.toNullObj(shopNum)?"../../static/icon_select_sel.png":"../../static/icon_select_def.png"}}'></image>
+<view class="alls" >全选</view>
 </view>
 <view class="flex flex-row ">
 <view class="te">总计：</view>

@@ -13,7 +13,8 @@ Page({
     duration: 500,
     list:[],
     seckill:[],
-    banner:[]
+    banner:[],
+    category:[]
   },
   //事件处理函数
   bindViewTap: function() {
@@ -21,14 +22,41 @@ Page({
       url: '../logs/logs'
     })
   },
+  goIndexDetail(e) {
+    let id = e.currentTarget.dataset.id
+    wx.navigateTo({
+      url: '/pages/detail/index?goods_id=' + id
+    })
+  },
+  getAddress(){
+    wx.getLocation({
+      type: 'wgs84',
+      success(res) {
+        const latitude = res.latitude
+        const longitude = res.longitude
+      }
+    })
+  },
   onShow(){
     this.getBanner()
+    this.getGood()
   },
   getBanner(){
     wxRequest.getRequest(api.advert(), { code:'ad-index'})
     .then(res=>{
       this.setData({
       background:res.data.list
+      })
+    })
+  },
+  getCategory(){
+    wxRequest.getRequest(api.category(),{
+      level:1
+    })
+    .then(res=>{
+      
+      this.setData({
+        category:res.data.list
       })
     })
   },
@@ -42,13 +70,14 @@ Page({
       url: '/pages/coupon-center/index',
     })
   },
-  goinList(){
+  goinList(e){
+    let id = e.currentTarget.dataset.id
     wx.navigateTo({
-      url: '/pages/shop-list/index',
+      url: '/pages/shop-list/index?p_category_id='+id,
     })
   },
   onLoad: function () {
-   
+    this.getCategory()
     this.groupon()
     this.getList()
   },
@@ -74,6 +103,15 @@ Page({
           seckill: res.data.list
         })
       })
+  },
+  getGood(){
+    wxRequest.getRequest(api.goodsList(),{
+      sales:1
+    })
+    .then(res=>{
+      this.setData({
+        goodList:res.data.list
+      })
+    })
   }
- 
 })

@@ -4,14 +4,14 @@
    <view class="list" wx:for='{{list}}'>
      <view class="flex flex-row row">
      <view class="xp">{{item.username}}</view>
-     <view class="mat">15159212638</view>
+     <view class="mat">{{item.mobile}}</view>
      </view>
      <view class="row desc">
      {{item.province}}{{item.city}}{{item.area}}{{item.address}}
      </view>
      <view class="border">
-        <view class="flex flex-row  item-center">
-        <image class="mode" src="../../static/icon_select_sel.png" mode="widthFix"></image>
+        <view class="flex flex-row  item-center"  bindtap="changAddress" data-id="{{item.address_id}}">
+        <image class="mode" src="{{item.is_default == 1?'../../static/icon_select_sel.png':'../../static/icon_select_def.png'}}" mode="widthFix"></image>
         <text class="adds">默认地址</text>
         </view>
         <view class="flex flex-row  item-center">

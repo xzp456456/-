@@ -11,7 +11,9 @@ Page({
     count:'',
     keyword:'',
     order_price:1,
-    sales:1
+    sales:1,
+    p_category_id:'',
+    category_id:''
   },
 
   /**
@@ -46,13 +48,25 @@ Page({
     this.getList()
   },
   onLoad: function (options) {
+    if (options.p_category_id){
+    this.setData({
+      p_category_id:options.p_category_id
+    })
+    }
+    if (options.category_id){
+      this.setData({
+        category_id: options.category_id
+      })
+    }
     this.getList()
   },
   getList(){
     wxRequest.getRequest(api.goodsList(),{
        order_price: this.data.order_price,
        sales: this.data.sales,
-       keyword: this.data.keyword
+       keyword: this.data.keyword,
+      p_category_id: this.data.p_category_id,
+      category_id: this.data.category_id
     })
     .then(res=>{
       console.log(res)

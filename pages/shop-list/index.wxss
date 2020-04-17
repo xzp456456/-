@@ -4,6 +4,7 @@
   width: 100%;
   position: absolute;
   background:rgba(245,245,245,1);
+  min-height: 100%;
 }
 .row{
   width: 90%;

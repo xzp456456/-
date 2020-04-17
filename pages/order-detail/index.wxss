@@ -69,6 +69,7 @@
 .online {
   width: 160rpx;
   height: 60rpx;
+  margin-right: 30rpx;
   background: rgba(255, 255, 255, 1);
   border-radius: 10rpx;
   text-align: center;

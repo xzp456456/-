@@ -2,15 +2,15 @@
 <view class="main">
 
 <view class="type">
-    <view class="ol" wx:for="{{list}}" data-item="{{item.childlist}}" bindtap="getChild">{{item.name}}</view>
+    <view class="ol {{index == point? 'select':''}}" wx:for="{{list}}" data-index="{{index}}" data-item="{{item.childlist}}" bindtap="getChild">{{item.name}}</view>
     <!-- <view class="ol">热带水果</view>
     <view class="ol">热带水果</view>
     <view class="ol">热带水果</view>
     <view class="ol">热带水果</view> -->
 </view>
 <view class="item">
-    <view class="list" wx:for="{{child}}">
-      <image class="fled" src="{{item.image}}"  mode="widthFix"></image>
+    <view class="list" wx:for="{{child}}" bindtap="goToDetail" data-id="{{item.id}}">
+      <image class="fled"  src="{{item.image}}"  mode="widthFix"></image>
       <view class="text">{{item.name}}</view>
     </view>
      <!-- <view class="list">
