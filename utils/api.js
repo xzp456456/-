@@ -62,5 +62,7 @@ export default {
   
   userAddressdefault: () => { return config + '/api/user_address/default' },
 
-  getorder: () => { return config + '/api/order' }
+  getorder: () => { return config + '/api/order' },
+
+  fastSettlement: () => { return config + '/api/order/fastSettlement' }
 }   

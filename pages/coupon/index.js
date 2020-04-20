@@ -7,14 +7,17 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    indexSelect:'',
+    goods_id:''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      goods_id: options.goods_id
+    })
   },
 
   /**
@@ -37,12 +40,24 @@ Page({
   onHide: function () {
 
   },
+  selectList(e){
+    let index = e.currentTarget.dataset.index
+    this.setData({
+      indexSelect: index,
+      coupon_id: e.currentTarget.dataset.coupon_id
+    })
+  },
   getCoupon(){
     wxRequest.getRequest(api.getcoupon(),{})
     .then(res=>{
       this.setData({
         list:res.data.list
       })
+    })
+  },
+  useCart(){
+    wx.navigateTo({
+      url: '/pages/order/index?coupon_id=' + this.data.coupon_id + '&&goods_id=' + this.data.goods_id
     })
   },
   /**

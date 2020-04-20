@@ -24,12 +24,7 @@ Page({
       url: '/pages/orderTime/index?cart_ids=' + id,
     })
   },
-  getTime(){
-    wxRequest.getRequest(api.deliverTime(),{})
-    .then(res=>{
-      time: res.data.value
-    })
-  },
+
   getOrderInfo(){
     let cart_ids = app.cart_ids.join(',')
     let activity_money = app.activity_money

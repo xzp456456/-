@@ -21,7 +21,12 @@ Page({
     console.log(e)
     wxRequest.postRequest(api.getcoupon(), { coupon_id })
     .then(res=>{
-        console.log(e)
+        if(res.status == 1){
+          wx.showToast({
+            title: res.msg,
+          })
+          this.getList()
+        }
     })
   },
   getList(){

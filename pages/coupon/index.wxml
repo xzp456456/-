@@ -22,7 +22,7 @@
     <view class='ma-pd'>
       <view class='flex flex-row flex-bet'>
       <text class='sizeType'>{{item.title}}</text>
-      <image class='select' src='../../static/icon_select_def.png'></image>
+      <image class='select' bindtap="selectList"  data-coupon_id="{{item.coupon_id}}" data-index="{{index}}" src='{{index === indexSelect?"../../static/icon_select_sel.png":"../../static/icon_select_def.png"}}'></image>
       
       </view>
       <view class='manjian'>{{item.desc}}</view>
@@ -82,6 +82,6 @@
     </view> 
 </view>-->
 <view>
-  <button class='btn'>确认使用</button>
+  <button class='btn' bindtap="useCart">确认使用</button>
 </view>
 </view>

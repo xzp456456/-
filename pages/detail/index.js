@@ -23,7 +23,7 @@ Page({
   },
   payOrder(){
     wx.navigateTo({
-      url: '/pages/order/index',
+      url: '/pages/order/index?goods_id='+ this.data.goods_id,
     })
   },
   add(){
