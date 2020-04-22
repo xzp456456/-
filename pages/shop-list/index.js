@@ -13,7 +13,8 @@ Page({
     order_price:1,
     sales:1,
     p_category_id:'',
-    category_id:''
+    category_id:'',
+    selectList:0
   },
 
   /**
@@ -34,17 +35,30 @@ Page({
   },
   searchAll(){
     this.setData({
+      selectList:0,
       order_price: 1,
       sales: 1
     })
     this.getList()
   },
   searchNum(){
-    this.data.order_price == 1 ? this.data.order_price = 2 : this.data.order_price = 1
+    this.data.order_price == 1 ? this.setData({
+      selectList:1,
+      order_price: 2
+    }) : this.setData({
+        selectList: 1,
+      order_price: 1
+    })
     this.getList()
   },
   searchPrice(){
-    this.data.sales == 1 ? this.data.sales = 2 : this.data.sales = 1
+    this.data.sales == 1 ? this.setData({
+      selectList: 2,
+      sales: 2
+    }) : this.setData({
+        selectList: 2,
+      sales: 1
+    })
     this.getList()
   },
   onLoad: function (options) {

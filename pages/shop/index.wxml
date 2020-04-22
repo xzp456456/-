@@ -16,7 +16,12 @@
     <image class="ad" src="{{li.image}}"  mode="widthFix"></image>
     <view>
     <view class="desc">{{li.goods_name}}</view>
-    <view class="all" wx:for='{{li.activity}}' wx:for-item='ul'>{{ul.name}}</view>
+      <!-- <picker bindchange="bindPickerChange" value="{{index}}" range="{{li.activity}}">
+    <view class="picker all">
+      {{li.activity[index].title}}
+    </view>
+  </picker> -->
+   <view class="all" wx:for='{{li.activity}}' wx:for-item='ul'>{{ul.name}}</view>
     <view class="flex flex-row item-center">
       <view class="flex flex-row flex-bet item-center wid">
       <view class="flex flex-row item-center">

@@ -26,6 +26,7 @@ Page({
       })
     }
   },
+  
   goToIndex(e){
     let url = e.currentTarget.dataset.url
     wx.navigateTo({
@@ -46,7 +47,7 @@ Page({
   },
   goto(){
     wx.navigateTo({
-      url: '/pages/coupon/index',
+      url: '/pages/coupon-detail/index',
     })
   },
   getUserInfo(){
@@ -75,7 +76,14 @@ Page({
   onShow: function () {
     this.getUserInfo()
   },
-
+  loginOut(){
+    wx.setStorageSync('isAuthSuccess', false)
+    wx.setStorageSync('access_token', '')
+    wx.setStorageSync('bindOauthId', 0)
+    this.setData({
+      isLogin:false
+    })
+  },
   /**
    * 生命周期函数--监听页面隐藏
    */

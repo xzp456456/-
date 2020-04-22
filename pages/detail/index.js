@@ -15,6 +15,8 @@ Page({
     duration: 500,
     onOff:true,
     hidden:true,
+    array:[],
+    index:0,
     countPay:1,
     info:{
       images:[]
@@ -61,7 +63,8 @@ Page({
       console.log(res)
       this.setData({
         info:res.data,
-        count: res.data.cart_count
+        count: res.data.cart_count,
+        array: res.data.acitivity
       })
     })
   },

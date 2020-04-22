@@ -5,7 +5,7 @@
  <view class='flex flex-bet space'>
  <view class='flex flex-row address-name '>
     <image class='address' src='../../static/home_icon_address.png'></image>
-    <text class='adtext'>集美区</text>
+    <text class='adtext'>{{local}}</text>
     </view>
     <view class='mode'>
     <image class='search-img' src='../../static/home_icon_search.png'></image>

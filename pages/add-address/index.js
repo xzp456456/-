@@ -30,6 +30,43 @@ Page({
          
 
   },
+  readyDelete() {
+    let that = this
+    wx.showModal({
+      title: '提示',
+      content: '确认删除该地址',
+      success(res) {
+        if (res.confirm) {
+          that.deleteAddress()
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
+    })
+
+  },
+  deleteAddress() {
+    let address_id = this.data.address_id
+    wxRequest.postRequest(api.addressDelete(), {
+      address_id
+    })
+      .then(res => {
+        if (res.status == 1) {
+          wx.showToast({
+            title: '删除成功'
+          })
+          setTimeout(()=>{
+            wx.navigateTo({
+              url: '/pages/address/index',
+            })
+          },1500)
+        } else {
+          wx.showToast({
+            title: res.msg
+          })
+        }
+      })
+  },
   deleteText(e){
     console.log(e)
       let item = e.currentTarget.dataset.model;

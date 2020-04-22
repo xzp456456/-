@@ -29,8 +29,14 @@
     "pages/shop-list/index",
     "pages/business/index",
     "pages/login/index",
-    "pages/shop/index"
+    "pages/shop/index",
+    "pages/self/index"
   ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "地图定位"
+    }
+  },
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#2E9109",

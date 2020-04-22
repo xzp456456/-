@@ -11,9 +11,14 @@ Page({
     array: [],
     index:0,
     goods_id:'',
-    detail:''
+    detail:'',
+    message:''
   },
-
+  getmessage(e){
+    this.setData({
+      message: e.detail.value
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -61,9 +66,28 @@ Page({
     })
   },
   getPay(){
-    wx.navigateTo({
-      url: '/pages/orderTime/index',
+    wxRequest.postRequest(api.getorder(),{
+      address_id: this.data.detail.address.id,
+      goods_id: this.data.detail.goods[0].goods_id,
+      buy_num: parseFloat(this.data.detail.real_money),
+      pay_way:'wxpay',
+      order_info:JSON.stringify({
+        message:this.data.message,
+        user_coupon_id:'',
+        expected_delivery_day_time:1587052800,
+        expected_delivery_time:'20:00-20:30',
+        reduction_money: ''
+      }),
+      activity_goods_id:'',
+      sku_id:''
+    }).then(res=>{
+      if(res.status==1){
+        wx.navigateTo({
+          url: '/pages/orderTime/index?order_id='+res.data.order_id,
+        })
+      }
     })
+    
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

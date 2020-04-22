@@ -43,8 +43,19 @@
 <view class='flex flex-row youhui'>
   <view class='t-text'>优惠</view>
   <view class='mj'>满减</view>
-  <view class='sh'>满79减3，满109减10，满209减16</view>
-  <view class='mak'><image bindtap='actionSheetShow' class='more' src='../../static/icon_more_an.png' mode="widthFix"></image></view>
+  <view class='sh'>
+  <view class="section">
+  <view class="section__title"></view>
+  <picker bindchange="bindPickerChange"  value="{{index}}" range="{{array}}"  range-key="name">
+    <view class="picker">
+     <text>{{array[index].name}}</text>
+      <view class='mak' ><image   class='more' src='../../static/icon_more_an.png' mode="widthFix"></image></view>
+    </view>
+     
+  </picker>
+</view>
+  </view>
+ 
 </view> 
 <view class='boder'>
 
@@ -156,9 +167,12 @@
 <view class="poder"><view class="count" wx:if='{{count>0}}'>{{count}}</view> <image class='che' src='../../static/mall_icon_shop.png'></image>
  <view class='payShop' >购物车</view>
  </view>
-<view class='flex flex-row'>
+<view class='flex flex-row' wx:if="{{info.count_stock>0}}">
   <view class='joinShop' bindtap="joinCart">加入购物车</view>
   <view class='payAdd' bindtap='actionSheetTap'>立即下单</view>
+</view> 
+<view class='flex flex-row wd' wx:if="{{info.count_stock==0}}">
+  <view class='Zro' bindtap="joinCart">补货中</view>
 </view>
 </view>
 </view>

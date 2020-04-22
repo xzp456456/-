@@ -11,9 +11,9 @@
   
 </view>
 <view class='cate'>
-  <view bindtap="searchAll" >综合</view>
-  <view bindtap="searchNum">销量</view>
-  <view class='price' bindtap="searchPrice">价格
+  <view class="{{selectList==0?'active':''}}" bindtap="searchAll">综合</view>
+  <view class="{{selectList==1?'active':''}}" bindtap="searchNum">销量</view>
+  <view class="{{selectList==2?'active':''}} price" bindtap="searchPrice">价格
   <view class='biao'>
    <image class='shang'  src='../../static/sort_sel.png'></image>
     <image class='xia' src='../../static/sort_def.png'></image>

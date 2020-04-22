@@ -5,6 +5,7 @@ import wxRequest from '../../utils/request.js'
 import api from '../../utils/api.js'
 Page({
   data: {
+    local:'定位中..',
     background: ['demo-text-1', 'demo-text-2', 'demo-text-3'],
     indicatorDots: true,
     vertical: false,
@@ -15,6 +16,12 @@ Page({
     seckill:[],
     banner:[],
     category:[]
+  },
+  onShow() {
+    this.getBanner()
+    this.getGood()
+    this.getAddressName()
+    this.getLocation()
   },
   //事件处理函数
   bindViewTap: function() {
@@ -28,19 +35,81 @@ Page({
       url: '/pages/detail/index?goods_id=' + id
     })
   },
-  getAddress(){
+  /*定位*/
+  getLocation() {
     wx.getLocation({
-      type: 'wgs84',
-      success(res) {
-        const latitude = res.latitude
-        const longitude = res.longitude
-      }
+      type: "gcj02",
+      success: (res) => {
+        let latitude, longitude;
+        latitude = res.latitude.toString();
+        longitude = res.longitude.toString();
+        wx.request({
+          url: "https://apis.map.qq.com/ws/geocoder/v1/",
+          data: {
+            location: `${latitude},${longitude}`,
+            key: "PKXBZ-UARKP-SDJDO-LLSYK-FYRAE-FOBXS",
+            get_poi: 0
+          },
+          success: (re) => {
+            if (re.statusCode === 200) {
+              if (re.data.result) {
+                let { ad_info } = re.data.result;
+                this.setData({
+                  local: ad_info.district
+                });
+              } else {
+                showToast(re.data.message);
+              }
+            } else {
+              showToast("获取信息失败，请重试！");
+            }
+          }
+        });
+      },
+      fail: () => { }
+    });
+  },
+  /*获取权限*/
+  getSetting() {
+    wx.getSetting({
+      success: (res) => {
+        if (res.authSetting["scope.userLocation"] == false) {
+          showModal(
+            "检测到您未授权使用位置权限，请先开启",
+            (res) => {
+              if (res.confirm) {
+                wx.openSetting({
+                  success: (res) => {
+                    this.getLocation();
+                  }
+                });
+              } else {
+                showToast("拒绝授权");
+                this.setData({
+                  local: "定位失败"
+                });
+              }
+            }
+          );
+        } else {
+          wx.authorize({
+            scope: "scope.userLocation",
+            success: () => {
+              this.getLocation();
+            },
+            fail: () => {
+              showToast("拒绝授权");
+              this.setData({
+                local: "定位失败"
+              });
+            }
+          })
+        }
+      },
+      fail: () => { }
     })
   },
-  onShow(){
-    this.getBanner()
-    this.getGood()
-  },
+ 
   getBanner(){
     wxRequest.getRequest(api.advert(), { code:'ad-index'})
     .then(res=>{
@@ -48,6 +117,18 @@ Page({
       background:res.data.list
       })
     })
+  },
+  getAddressName(){
+  wx.getSetting({
+    success: (res)=>{
+      wx.getLocation({
+        type: 'wgs84',
+        success(res) {
+         console.log(res)
+        }
+      })
+    }
+  })
   },
   getCategory(){
     wxRequest.getRequest(api.category(),{

@@ -1,0 +1,27 @@
+/* pages/self/index.wxss */
+.header_pic{
+  width: 88rpx;
+  height: 88rpx;
+  border-radius:50%; 
+}
+
+.list{
+border-bottom:1rpx solid #D7D7D7;
+display: flex;
+height: 110rpx;
+ align-items: center;
+}
+
+.rowList{
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin: 0 auto;
+  align-items: center;
+   
+}
+
+.text{
+  font-size: 28rpx;
+
+}

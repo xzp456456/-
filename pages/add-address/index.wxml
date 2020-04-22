@@ -27,5 +27,5 @@
 </view>
 <view class="btn" wx:if="{{!address_id}}" bindtap="getUserAddress"> 保存</view>
 <view class="btn" wx:if="{{address_id}}" bindtap="updateUserAddress"> 保存修改</view>
-<view class="delet" wx:if="{{false}}">删除收货地址</view>
+<view class="delet" wx:if="{{address_id}}" bindtap="readyDelete">删除收货地址</view>
 </view>

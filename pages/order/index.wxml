@@ -31,7 +31,7 @@
      
       <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}" range-key="start" >
     <view class="picker">
-       <view class='line' >{{array[index].start}}<image class='back mrt' src='../../static/icon_more.png' mode="widthFix"></image></view>
+       <view class='line' >{{array[index].start}}-{{array[index].end}}<image class='back mrt' src='../../static/icon_more.png' mode="widthFix"></image></view>
     </view>
   </picker>
       </view>
@@ -87,7 +87,7 @@
  </view>
  <view class='flex flex-row row lists'>
   <view class='label'>买家留言：</view>
-  <input placeholder-class='placeholder' placeholder='选填:建议填写内容前先与商家沟通'></input>
+  <input placeholder-class='placeholder'  bindinput="getmessage" placeholder='选填:建议填写内容前先与商家沟通'></input>
  </view>
  <view class='row textRight'>
    <view><text class='tak'>共7件商品 合计：</text><text class='priceNum'>¥{{detail.real_money}}</text></view>

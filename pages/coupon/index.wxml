@@ -1,4 +1,5 @@
 <!--pages/coupon/index.wxml-->
+<wxs module="filters" src="../../extend/filters.wxs"></wxs>
 <view class='container'>
 <view class='list' wx:for='{{list}}'>
   <image class='wid' src='../../static/coupon_img.png' mode="widthFix"></image>

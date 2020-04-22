@@ -261,6 +261,19 @@ font-weight:500;
 color:rgba(46,145,9,1);
 }
 
+.Zro{
+  width:230rpx;
+height:80rpx;
+background:#D7D7D7;
+border-radius:10rpx;
+text-align: center;
+line-height: 80rpx;
+font-size:30rpx;
+font-family:PingFangSC-Medium,PingFang SC;
+font-weight:500;
+color:rgba(46,145,9,1);
+}
+
 .payAdd{
   width:230rpx;
 height:80rpx;
@@ -291,6 +304,12 @@ color:rgba(17,17,17,1);
 
 .poder{
   position: relative;
+}
+
+.wd{
+  width: 420rpx;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 .count{
@@ -360,6 +379,19 @@ color:rgba(17,17,17,1);
 
 .mang{
   width: 150rpx;
+}
+
+.picker{
+  width: 430rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.section{
+  display: flex;
+  flex-direction: row;
 }
 
 .text{

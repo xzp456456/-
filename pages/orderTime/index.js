@@ -17,36 +17,31 @@ Page({
    */
   onLoad: function (options) {
       this.setData({
-        cart_ids: options.cart_ids
+        order_id: options.order_id
       })
   },
-  pay(){
-    wxRequest.postRequest(api.getorder(),{
-      address_id: this.data.info.address.id,
-      pay_way: 'wxpay',
-      cart_ids: this.data.cart_ids,
-      order_info:{}
-    })
-    .then(res=>{
-      console.log(res)
-    })
-  },
+ 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    
   },
-
+  getPayInfo(){
+    let id = this.data.order_id
+    wxRequest.getRequest(api.myOrder() +'/' +id,{})
+    .then(res=>{
+      this.setData({
+        info:res.data
+      })
+    })
+  },
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
     
-    this.setData({
-      info:app.payInfo
-    })
-    console.log(this.data.info)
+    this.getPayInfo()
   },  
 
   /**

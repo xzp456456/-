@@ -1,7 +1,7 @@
 <!--pages/me/index.wxml-->
 <wxs module="filters" src="../../extend/filters.wxs"></wxs>
 <view class="container">
-<view class='me'>
+<view class='me' data-url="/pages/self/index" bindtap="goToIndex">
   <view class='flex flex-row row mt' wx:if="{{isLogin}}">
     <image class='avatar' src='{{info.avatar}}'  mode="widthFix"></image>
     <view class='ma-left'>
@@ -121,6 +121,6 @@
       
       </view>
   </view>
-  <view class='btn'>退出登录</view>
+  <view class='btn' bindtap="loginOut">退出登录</view>
 </view>
 </view>

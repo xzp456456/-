@@ -1,0 +1,31 @@
+<!--pages/self/index.wxml-->
+<view class="item">
+
+  <view class="list">
+    <view class="rowList">
+      <view class="text">
+        头像</view>
+      <view>
+        <image class="header_pic" src="{{userInfo.avatar}}"></image>
+      </view>
+    </view>
+  </view>
+  <view class="list">
+    <view class="rowList">
+      <view class="text">
+
+        微信昵称</view>
+      <view>
+        {{userInfo.username}}</view>
+    </view>
+  </view>
+  <view class="list">
+    <view class="rowList">
+      <view class="text">
+
+        手机号码</view>
+      <view>
+        {{userInfo.mobile}}</view>
+    </view>
+  </view>
+</view>

@@ -14,7 +14,7 @@
 <view class="center">
   <view class="list row">
     <view class="label">订单编号</view>
-     <view class="number">18070514570001</view>
+     <view class="number">{{info.order_sno}}</view>
   </view>
   <view class="list row">
     <view class="label">支付金额</view>
@@ -28,5 +28,5 @@
      </view>
   </view>
 </view>
- <view class="button" bindtap="pay">确认支付</view>
+ <view class="button" >确认支付</view>
 </view>

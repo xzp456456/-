@@ -11,7 +11,11 @@ Page({
     shopNum:[],
     allSelect:null,
     count_pay:0,
+    index:0,
     activity_money:100
+  },
+  bindPickerChange(){
+
   },
   goinPay(){
 

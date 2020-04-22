@@ -1,4 +1,5 @@
-// pages/orderList/index.js
+// pages/self/index.js
+const app = getApp()
 import wxRequest from '../../utils/request.js'
 import api from '../../utils/api.js'
 Page({
@@ -7,37 +8,22 @@ Page({
    * 页面的初始数据
    */
   data: {
-    status:''
+    userInfo:{}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getUserInfo()
   },
-  getPay(e){
-    wx.navigateTo({
-      url: '/pages/orderTime/index?order_id='+ e.currentTarget.dataset.id,
-    })
-  },
-  changStatus(e){
-    let status = e.currentTarget.dataset.status
-    this.setData({
-      status: status
-    })
-    this.getOrder()
-  },
-  getOrder(){
-    let status = this.data.status
-    wxRequest.getRequest(api.myOrder(),{
-      status: status
-    })
-    .then(res=>{
-      this.setData({
-        list:res.data.list
+  getUserInfo() {
+    wxRequest.getRequest(api.getUserInfo(), {})
+      .then(res => {
+        this.setData({
+          userInfo: res.data
+        })
       })
-    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -50,7 +36,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.getOrder()
+
   },
 
   /**
