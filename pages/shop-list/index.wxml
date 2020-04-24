@@ -4,9 +4,9 @@
     <view class='maindata'>
     <view class='poser'>
     <image class='search' src='../../static/icon_search.png' mode="widthFix"></image>
-    <input class='search-input' bindinput="searchText"  placeholder='请输入关键字搜索' placeholder-class='placeholder'></input></view>
+    <input class='search-input' value="{{keyword}}" bindinput="searchText"  placeholder='请输入关键字搜索' placeholder-class='placeholder'></input></view>
       
-      <view class='search-text' bindtap="search">搜索</view>
+      <view class='search-text' bindtap="getList">搜索</view>
     </view>
   
 </view>

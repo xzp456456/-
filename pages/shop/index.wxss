@@ -37,6 +37,20 @@ flex-direction: row;
 align-items: center;
 }
 
+.picker{
+  background:rgba(249,249,249,1);
+border-radius:4rpx;
+display: inline-block;
+padding: 0 20rpx 0rpx 20rpx;
+
+}
+
+.xiabiao{
+  width:14rpx;
+  position: relative;
+  top: -5rpx;
+}
+
 .quan{
   width: 40rpx;
   height: 40rpx;
@@ -104,11 +118,13 @@ width:400rpx;
 overflow: hidden;
 text-overflow:ellipsis;
 white-space: nowrap;
-padding-bottom: 20rpx;
+padding-bottom: 10rpx;
 }
 
 .all{
-  padding-bottom: 20rpx;
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+  margin-bottom: 10rpx;
   font-size:24rpx;
 font-family:PingFangSC-Regular,PingFang SC;
 font-weight:400;

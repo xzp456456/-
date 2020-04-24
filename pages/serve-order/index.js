@@ -1,4 +1,7 @@
 // pages/serve-order/index.js
+const app = getApp()
+import wxRequest from '../../utils/request.js'
+import api from '../../utils/api.js'
 Page({
 
   /**
@@ -12,7 +15,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getOrderRefund()
   },
 
   /**
@@ -26,9 +29,18 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    
   },
-
+  getOrderRefund(){
+    wxRequest.getRequest(api.orderRefund(),{})
+    .then(res=>{
+      if(res.status==1){
+        this.setData({
+          list:res.data
+        })
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面隐藏
    */

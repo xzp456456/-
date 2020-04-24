@@ -64,5 +64,17 @@ export default {
 
   getorder: () => { return config + '/api/order' },
 
-  fastSettlement: () => { return config + '/api/order/fastSettlement' }
+  fastSettlement: () => { return config + '/api/order/fastSettlement' },
+
+  cancelOrder:()=> { return config + '/api/order/cancel' },
+
+  orderdelete: () => { return config + '/api/order/delete' },
+
+  updataActivity: () => { return config + '/api/cart/updataActivity' },
+
+  orderRefund: () => { return config + '/api/order_refund' },
+
+  orderconfirm: () => { return config + '/api/order/confirm' },
+
+  orderGoods: () => { return config + '/api/order/orderGoods' }
 }   

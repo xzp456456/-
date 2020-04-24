@@ -1,13 +1,14 @@
 <!--pages/orderTime/index.wxml-->
+<wxs module="tools" src="../../extend/tools.wxs"></wxs>
 <view class="container">
  <view class="main-time">
    <view class="pd">
    <text>剩余支付时间</text>
    </view>
    <view class="item">
-   <view class="ts">07</view><text>：</text>
-    <view class="ts">07</view><text>：</text>
-     <view class="ts">58</view>
+   <view class="ts">{{tools.toDateMinTime(updateTime)[0]}}</view><text>：</text>
+    <view class="ts">{{tools.toDateMinTime(updateTime)[1]}}</view><text>：</text>
+     <view class="ts">{{tools.toDateMinTime(updateTime)[2]}}</view>
    </view>
  </view>
 

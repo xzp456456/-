@@ -14,8 +14,17 @@ Page({
     index:0,
     activity_money:100
   },
-  bindPickerChange(){
-
+  bindPickerChange(e){
+    console.log(e)
+    let item = e.currentTarget.dataset.item
+    let cart_id = e.currentTarget.dataset.id
+    let activity_id = item[e.detail.value].activity_id
+    wxRequest.postRequest(api.updataActivity(),{
+      cart_id: cart_id,
+        activity_id: activity_id
+    }).then(res=>{
+      this.getCartList()
+    })
   },
   goinPay(){
 

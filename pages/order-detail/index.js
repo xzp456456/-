@@ -9,35 +9,76 @@ Page({
    */
   data: {
     info: {},
-    time:{}
+    time:{},
+    updateTime:''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    this.setData({
+      id: options.id
+    })
   },
   goToPay(){
-    let id = app.cart_ids.join(',')
+    let id = this.data.id
     wx.navigateTo({
-      url: '/pages/orderTime/index?cart_ids=' + id,
+      url: '/pages/orderTime/index?order_id=' + id,
     })
   },
-
-  getOrderInfo(){
-    let cart_ids = app.cart_ids.join(',')
-    let activity_money = app.activity_money
-    wxRequest.getRequest(api.settlement(),{
-      cart_ids,
-      activity_money
+  cancel(id) {
+    wxRequest.postRequest(api.cancelOrder(), {
+      order_id: id
     })
+      .then(res => {
+        if (res.status == 1) {
+          this.getOrderInfo()
+        }
+      })
+  },
+  readCancel(e) {
+    var that = this
+    let id = e.currentTarget.dataset.id
+    wx.showModal({
+      title: '提示',
+      content: '确定取消',
+      success(res) {
+        if (res.confirm) {
+
+          that.cancel(id)
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
+    })
+  },
+  getOrderInfo(){
+    let id = this.data.id
+    wxRequest.getRequest(api.getorder() + '/'+id,{})
     .then(res=>{
       console.log(res)
       app.payInfo = res.data
       this.setData({
         info:res.data
       })
+      let oldTime = res.data.remain_time
+      this.setData({
+        start_timer: setInterval(() => {
+          oldTime--
+
+          this.setData({
+            updateTime: oldTime
+          })
+        }, 1000)
+      })
+    })
+  },
+  serve(e){
+    let order_id = e.currentTarget.dataset.order_id
+    let order_goods_id = e.currentTarget.dataset.order_goods_id
+    wx.navigateTo({
+      url: '/pages/server/index?order_id='  +order_id + '&&order_goods_id=' + order_goods_id
     })
   },
   /**
@@ -52,21 +93,20 @@ Page({
    */
   onShow: function () {
     this.getOrderInfo()
-    this.getTime()
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-
+    clearInterval(this.data.start_timer);
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
+    clearInterval(this.data.start_timer);
   },
 
   /**

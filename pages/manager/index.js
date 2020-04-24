@@ -7,7 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    list:''
+    info:{}
   },
 
   /**
@@ -16,7 +16,18 @@ Page({
   onLoad: function (options) {
 
   },
-
+  calling: function (e) {
+    let mobile = e.currentTarget.dataset.mobile
+    wx.makePhoneCall({
+      phoneNumber: mobile, //此号码并非真实电话号码，仅用于测试
+      success: function () {
+        console.log("拨打电话成功！")
+      },
+      fail: function () {
+        console.log("拨打电话失败！")
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -42,7 +53,7 @@ Page({
     .then(res=>{
       console.log(res)
       this.setData({
-        list: res.data.list
+        info: res.data
       })
     })
   },

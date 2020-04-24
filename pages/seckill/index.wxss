@@ -112,6 +112,7 @@ height:212rpx;
   height:8rpx;
 background:rgba(242,242,242,1);
 border-radius:4rpx;
+position: relative;
 }
 
 .list-view{
@@ -267,4 +268,12 @@ line-height: 54rpx;
   z-index: 99;
   width:162rpx;
 height:162rpx;
+}
+
+.bfb{
+  background: #2E9109;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
 }

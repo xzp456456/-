@@ -1,4 +1,5 @@
 <!--index.wxml-->
+<wxs module="tools" src="../../extend/tools.wxs"></wxs>
 <view class="container">
  <view class='banner'>
  <view class='row'>
@@ -40,9 +41,9 @@
  <view class='flex flex-row allTime'>
  <view>限时秒杀</view>
  <view class='time'>
- <view>07</view><text>:</text>
- <view>07</view><text>:</text>
- <view>07</view>
+ <view>{{tools.toDateMinTime(updateTime)[0]}}</view><text>:</text>
+ <view>{{tools.toDateMinTime(updateTime)[1]}}</view><text>:</text>
+ <view>{{tools.toDateMinTime(updateTime)[2]}}</view>
  </view>
 </view>
 
@@ -155,7 +156,7 @@
  </view>
   </view>
   <view>
-    <view class='main' wx:for='{{goodList}}' wx:key='{{index}}'>
+    <view class='main' wx:for='{{goodList}}' wx:key='{{index}}' bindtap="goIndexDetail" data-id="{{item.goods_id}}">
         <image class='prImg' src='{{item.image}}' mode="widthFix"></image>
         <view class='data-list'>
             <view class='title'>{{item.name}}</view>

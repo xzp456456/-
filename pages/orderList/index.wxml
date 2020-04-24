@@ -1,40 +1,58 @@
 <!--pages/orderList/index.wxml-->
 <view class='container'>
-<view class='flex flex-row space '>
-  <view data-status=""  class="{{status==''?'active':''}}"  bindtap="changStatus">全部</view>
-   <view data-status="-2" class="{{status==-2?'active':''}}" bindtap="changStatus">待付款</view>
+  <view class='flex flex-row space '>
+    <view data-status="" class="{{status==''?'active':''}}" bindtap="changStatus">全部</view>
+    <view data-status="-2" class="{{status==-2?'active':''}}" bindtap="changStatus">待付款</view>
     <view data-status="0" class="{{status==='0'?'active':''}}" bindtap="changStatus">待发货</view>
-     <view data-status="1" class="{{status==1?'active':''}}" bindtap="changStatus">待收货</view>
-</view>
-  
-  <view class='list' wx:for="{{list}}">
-  <view class='row'>
-   <view class='title' >
-    <text class='orderId'>订单编号：{{item.order_sno}}</text>
-    <text class='type' wx:if='{{item.status==-2}}'>待付款</text>
-    <text class='type' wx:if='{{item.status==0}}'>待发货</text>
-    <text class='type' wx:if='{{item.status==-1}}'>待收货</text>
-   </view>
-   <view class='flex flex-row flex-bet mt-20' wx:for='{{item.order_goods}}' wx:for-item='li'>
-   <view class='flex flex-row '>
-    <image class='produce' src='{{li.image}}' mode="widthFix"></image>
-    <view class='desc'>{{li.goods_name}}</view>
-    </view>
-    <view class='num'>x{{li.quantity}}</view>
-   </view>
-
-   <view class='flex flex-row border-bottom pb'>
-    <view class='mode'></view>
-    <view class='flex flex-row flex-bet flw border-top pd'>
-   <view class='pro'>...等其他商品</view>
-   <view class='proNum'>共{{item.goods_count}}件，总计：<text class='priceNum'>¥{{item.real_money}}</text> </view>
-   </view>
-   </view>
-   <view class='payMode'> 
-      <view class='cancel'>取消订单</view>
-      <view class='pay'  data-id="{{item.order_id}}" bindtap="getPay">去付款</view>
-   </view>
+    <view data-status="1" class="{{status==1?'active':''}}" bindtap="changStatus">待收货</view>
   </view>
-</view>
-<image class='null' wx:if="{{flase}}" src='../../static/msg_img_notorder.png' mode="widthFix"></image>
+
+  <view class='list' wx:for="{{list}}" data-id="{{item.order_id}}" bindtap="gotoDetail">
+    <view class='row'>
+      <view class='title'>
+        <text class='orderId'>订单编号：{{item.order_sno}}</text>
+        <text class='type' wx:if='{{item.status==-2}}'>待付款</text>
+        <text class='type' wx:if='{{item.status==0}}'>待发货</text>
+        <text class='type' wx:if='{{item.status==1}}'>待收货</text>
+         <text class='type' wx:if='{{item.status==2}}'>已完成</text>
+         <text class='type' wx:if='{{item.status==3}}'>已关闭</text>
+      </view>
+      <view class='flex flex-row flex-bet mt-20' wx:for='{{item.order_goods}}' wx:for-item='li'>
+        <view class='flex flex-row '>
+          <image class='produce' src='{{li.image}}' mode="widthFix"></image>
+          <view class='desc'>{{li.goods_name}}</view>
+        </view>
+        <view class='num'>x{{li.quantity}}</view>
+      </view>
+
+      <view class='flex flex-row border-bottom pb'>
+        <view class='mode'></view>
+        <view class='flex flex-row flex-bet flw border-top pd'>
+          <view class='pro'>...等其他商品</view>
+          <view class='proNum'>共{{item.goods_count}}件，总计：
+            <text class='priceNum'>¥{{item.real_money}}</text> </view>
+        </view>
+      </view>
+      <view class='payMode' wx:if='{{item.status==-2}}'>
+        <view class='cancel' bindtap="readCancel" data-id="{{item.order_id}}">取消订单</view>
+        <view class='pay' data-id="{{item.order_id}}" bindtap="getPay">去付款</view>
+      </view>
+
+      <view class='payMode' wx:if='{{item.status==3}}'>
+        <view class='cancel' catchtap="readDelete" data-id="{{item.order_id}}">删除订单</view>
+        <view class='pay' data-id="{{item.order_id}}" catchtap="getPay">再来一单</view>
+      </view>
+      <view class='payMode' wx:if='{{item.status==1}}'>
+        
+        <view class='pay' data-id="{{item.order_id}}" catchtap="readThing">确认收货</view>
+      </view>
+         <view class='payMode' wx:if='{{item.status==2}}'>
+        
+       <view class='cancel' catchtap="readDelete" data-id="{{item.order_id}}">删除订单</view>
+      </view>
+    </view>
+ 
+   
+  </view>
+  <image class='null' wx:if="{{flase}}" src='../../static/msg_img_notorder.png' mode="widthFix"></image>
 </view>

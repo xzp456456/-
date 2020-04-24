@@ -9,12 +9,19 @@ Page({
   data: {
     status:''
   },
-
+  gotoDetail(e){
+    let id = e.currentTarget.dataset.id
+    wx.navigateTo({
+      url: '/pages/order-detail/index?id='+id,
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      status:options.status
+    })
   },
   getPay(e){
     wx.navigateTo({
@@ -37,6 +44,84 @@ Page({
       this.setData({
         list:res.data.list
       })
+    })
+  },
+  cancel(id){
+    wxRequest.postRequest(api.cancelOrder(),{
+      order_id:id
+    })
+    .then(res=>{
+      if(res.status==1){
+        this.getOrder()
+      }
+    })
+  },
+  orderconfirm(id) {
+    wxRequest.postRequest(api.orderconfirm(), {
+      order_id: id
+    })
+      .then(res => {
+        if (res.status == 1) {
+          this.getOrder()
+        }
+      })
+  },
+  readThing(e){
+    var that = this
+    let id = e.currentTarget.dataset.id
+    wx.showModal({
+      title: '提示',
+      content: '确定收货',
+      success(res) {
+        if (res.confirm) {
+
+          that.orderconfirm(id)
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
+    })
+  },
+  readCancel(e){
+    var that = this
+    let id = e.currentTarget.dataset.id
+    wx.showModal({
+      title: '提示',
+      content: '确定取消',
+      success(res) {
+        if (res.confirm) {
+          
+          that.cancel(id)
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
+    })
+  },
+  deleteOrder(id) {
+    wxRequest.postRequest(api.orderdelete(), {
+      order_id: id
+    })
+      .then(res => {
+        if (res.status == 1) {
+          this.getOrder()
+        }
+      })
+  },
+  readDelete(e){
+    var that = this
+    let id = e.currentTarget.dataset.id
+    wx.showModal({
+      title: '提示',
+      content: '确定取消',
+      success(res) {
+        if (res.confirm) {
+
+          that.deleteOrder(id)
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
     })
   },
   /**

@@ -20,19 +20,19 @@
   我的订单
   </view>
     <view class='row flex flex-row flex-bet'>
-    <view bindtap="gotoOrder">
+    <view bindtap="gotoOrder" data-status="-2">
      <image class='sord' src='../../static/mine_icon_faifukuan.png' mode="widthFix"></image>
      <view class='text'>待付款</view>
     </view>
-     <view bindtap="gotoOrder">
+     <view bindtap="gotoOrder" data-status="0">
      <image class='sord' src='../../static/mine_icon_daishouhuo.png' mode="widthFix"></image>
      <view class='text'>待收货</view>
     </view>
-     <view bindtap="gotoOrder">
+     <view bindtap="goToIndex"  data-url="/pages/serve-order/index">
      <image class='sord' src='../../static/mine_icon_tuikuan.png' mode="widthFix"></image>
      <view class='text'>退款/售后</view>
     </view>
-     <view bindtap="gotoOrder">
+     <view bindtap="gotoOrder" data-status="">
      <image class='sord' src='../../static/mine_icon_all.png' mode="widthFix"></image>
      <view class='text'>全部订单</view>
     </view>

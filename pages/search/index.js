@@ -9,7 +9,23 @@ Page({
   data: {
     list:{}
   },
-
+  getkeyWord(e){
+    this.setData({
+      keyword:e.detail.value
+    })
+  },
+  hotSearch(e){
+    let value = e.currentTarget.dataset.value
+    this.setData({
+      keyword:value
+    })
+    this.gotoList()
+  },
+  gotoList(){
+    wx.navigateTo({
+      url: '/pages/shop-list/index?keyword=' + this.data.keyword,
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

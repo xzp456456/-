@@ -15,13 +15,17 @@ Page({
     list:[],
     seckill:[],
     banner:[],
-    category:[]
+    category:[],
+    start_timer:'',
+    time:''
   },
   onShow() {
+    this.getUserInfo()
     this.getBanner()
     this.getGood()
     this.getAddressName()
     this.getLocation()
+    this.getTime()
   },
   //事件处理函数
   bindViewTap: function() {
@@ -34,6 +38,25 @@ Page({
     wx.navigateTo({
       url: '/pages/detail/index?goods_id=' + id
     })
+  },
+  getTime() {
+    wxRequest.getRequest(api.seckillConfig(), {})
+      .then(res => {
+        console.log(res)
+        this.setData({
+          time: res.data.list
+        })
+        let oldTime = res.data.list[0].remain_time
+        this.setData({
+          start_timer: setInterval(() => {
+            oldTime--
+
+            this.setData({
+              updateTime: oldTime
+            })
+          }, 1000)
+        })
+      })
   },
   /*定位*/
   getLocation() {
@@ -194,5 +217,21 @@ Page({
         goodList:res.data.list
       })
     })
+  },
+  getUserInfo() {
+    wxRequest.getRequest(api.getUserInfo(), {})
+      .then(res => {
+        let text = res.data.cart_count.toString()
+        wx.setTabBarBadge({
+          index: 2,
+          text: text
+        })
+      })
+  },
+  onHide(){
+    clearInterval(this.data.start_timer);
+  },
+  onUnload(){
+    clearInterval(this.data.start_timer);
   }
 })

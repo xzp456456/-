@@ -1,4 +1,5 @@
 <!--pages/seckill/index.wxml-->
+<wxs module="tools" src="../../extend/tools.wxs"></wxs>
 <view class='container'>
   <view class='bgType'>
     <view class='dest' wx:for="{{time}}" >
@@ -22,14 +23,14 @@
   </view>
  <view class='flex center mt-main'>
      <view>
-     <view class='flex flex-row flex-center item-center'><image class='tiem-icon' src='../../static/icon_time.png'></image> <text class='to'>09:00正在疯抢</text></view>
+     <view class='flex flex-row flex-center item-center'><image class='tiem-icon' src='../../static/icon_time.png'></image> <text class='to'>{{time[0].config}}正在疯抢</text></view>
      <view class='flex flex-row flex-bet sord'><view class='border'></view> <view class='border'></view> </view>
      <view class='flex flex-row flex-center'>
       <view class='live'>离本场结束</view>
-      <view class='flex flex-row'>
-     <view class='ts'>02</view><text class='b'>:</text>
-    <view class='ts'>56</view><text class='b'>:</text>
-    <view class='ts'>22</view>
+      <view class='flex flex-row' >
+     <view class='ts' >{{tools.toDateMinTime(updateTime)[0]}}</view><text class='b'>:</text>
+    <view class='ts'>{{tools.toDateMinTime(updateTime)[1]}}</view><text class='b'>:</text>
+    <view class='ts'>{{tools.toDateMinTime(updateTime)[2]}}</view>
       </view>
      </view>
      </view>
@@ -41,8 +42,10 @@
       <view class='title'>{{item.name}}</view>
       <view class='numP'>每人限购{{item.limit_num}}份</view>
       <view class='flex flex-row flex-center item-center'>
-        <view class='jindu'></view>
-        <text class='txtN'>剩余{{item.left_rate}}%</text>
+        <view class='jindu'>
+        <view class="bfb" style=" width:{{(1-item.left_rate)*100}}px"></view>
+        </view>
+        <text class='txtN'>剩余{{item.left_rate*100}}%</text>
       </view>
       <view class='flex flex-row flex-bet mtTop'>
         <view class='flex flex-row item-center'>

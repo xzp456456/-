@@ -7,21 +7,22 @@
  <view class="item" id="item" wx:for='{{list}}' wx:for-item='item' wx:key='{{index}}'>
   <view class="list"  >
   <view class="title"  wx:if='{{filters.toNullObj(item.activity) !== "{}"}}'>
-   <image class="quan" src="../../static/icon_select_def.png" mode="widthFix"></image>
+   <!-- <image class="quan" src="../../static/icon_select_def.png" mode="widthFix"></image> -->
    <view class="mj">满减</view>
    <view class="ym">{{item.activity.title}}</view>
   </view>
-  <view class="flex flex-row deplay" wx:for='{{item.goods}}' wx:for-item='li'  data-id="{{li.cart_id}}">
+  <view class="flex flex-row deplay" wx:for='{{item.goods}}' wx:for-item='li' wx:for-index="i" data-id="{{li.cart_id}}">
     <image class="gou" src='{{filters.cheSome(li.cart_id,shopNum)?"../../static/icon_select_sel.png":"../../static/icon_select_def.png"}}' data-cart_id="{{li.cart_id}}" bindtap="getShop"></image>
     <image class="ad" src="{{li.image}}"  mode="widthFix"></image>
     <view>
     <view class="desc">{{li.goods_name}}</view>
-      <!-- <picker bindchange="bindPickerChange" value="{{index}}" range="{{li.activity}}">
+      <picker bindchange="bindPickerChange" value="{{select}}"  data-id="{{li.cart_id}}"  range-key="name" range="{{li.activity}}" data-item="{{li.activity}}">
     <view class="picker all">
-      {{li.activity[index].title}}
+      {{item.activity.title}}
+      <image class="xiabiao" src="../../static/sort_def.png" mode="widthFix"></image>
     </view>
-  </picker> -->
-   <view class="all" wx:for='{{li.activity}}' wx:for-item='ul'>{{ul.name}}</view>
+  </picker> 
+   <!-- <view class="all" wx:for='{{li.activity}}' wx:for-item='ul'>{{ul.name}}</view> -->
     <view class="flex flex-row item-center">
       <view class="flex flex-row flex-bet item-center wid">
       <view class="flex flex-row item-center">
@@ -111,6 +112,6 @@
 <view class="prices">¥{{total}}</view>
 
 </view>
-<view class="btn" bindtap="goinPay">去结算({{count_pay}})</view>
+<view class="btn" bindtap="goinPay">去结算({{shopNum.length}})</view>
 </view>
 </view>

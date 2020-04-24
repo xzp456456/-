@@ -11,20 +11,17 @@ Page({
     isAuthSuccess:null,
     isLogin:null
   },
-    gotoOrder(){
+    gotoOrder(e){
+      let status = e.currentTarget.dataset.status
       wx.navigateTo({
-        url: '/pages/orderList/index',
+        url: '/pages/orderList/index?status=' + status,
       })
     },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    if (wx.getStorageSync('access_token')){
-      this.setData({
-        isLogin:true
-      })
-    }
+    
   },
   
   goToIndex(e){
@@ -56,6 +53,11 @@ Page({
       this.setData({
         userInfo:res.data
       })
+      let text = res.data.cart_count.toString()
+      wx.setTabBarBadge({
+        index: 2,
+        text: text
+      })
     })
   },
   /**
@@ -74,15 +76,32 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    if (wx.getStorageSync('access_token')) {
+      this.setData({
+        isLogin: true
+      })
+    }
     this.getUserInfo()
   },
   loginOut(){
-    wx.setStorageSync('isAuthSuccess', false)
-    wx.setStorageSync('access_token', '')
-    wx.setStorageSync('bindOauthId', 0)
-    this.setData({
-      isLogin:false
+    let that = this
+    wx.showModal({
+      title: '提示',
+      content: '确认退出',
+      success(res) {
+        if (res.confirm) {
+          wx.setStorageSync('isAuthSuccess', false)
+          wx.setStorageSync('access_token', '')
+          wx.setStorageSync('bindOauthId', 0)
+          that.setData({
+            isLogin: false
+          })
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
     })
+    
   },
   /**
    * 生命周期函数--监听页面隐藏

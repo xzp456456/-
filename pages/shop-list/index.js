@@ -51,6 +51,7 @@ Page({
     })
     this.getList()
   },
+  
   searchPrice(){
     this.data.sales == 1 ? this.setData({
       selectList: 2,
@@ -62,6 +63,11 @@ Page({
     this.getList()
   },
   onLoad: function (options) {
+    if(options.keyword){
+      this.setData({
+        keyword:options.keyword
+      })
+    }
     if (options.p_category_id){
     this.setData({
       p_category_id:options.p_category_id

@@ -9,7 +9,9 @@ Page({
    */
   data: {
     info:{},
-    cart_ids:''
+    cart_ids:'',
+    updateTime:'',
+    start_timer:''
   },
 
   /**
@@ -34,6 +36,16 @@ Page({
       this.setData({
         info:res.data
       })
+      let oldTime = res.data.remain_time
+      this.setData({
+        start_timer: setInterval(() => {
+          oldTime--
+
+          this.setData({
+            updateTime: oldTime
+          })
+        }, 1000)
+      })
     })
   },
   /**
@@ -48,14 +60,14 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-
+    clearInterval(this.data.start_timer);
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
+    clearInterval(this.data.start_timer);
   },
 
   /**

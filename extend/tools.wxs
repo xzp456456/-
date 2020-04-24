@@ -1,0 +1,93 @@
+//时间戳转换公用方法
+var timer = function (time, type) {
+  if (!time) return "";
+  var date = getDate(time * 1000);
+  var year = date.getFullYear();
+  var month = date.getMonth() + 1;
+  var day = date.getDate();
+  var hour = date.getHours();
+  var minute = date.getMinutes();
+  var second = date.getSeconds();
+
+  if (type == "d") {
+    return [year, month, day].map(formatNumber).join("-");
+  } else if (type == "dt") {
+    return [year, month, day].map(formatNumber).join("-") + " " + [hour, minute, second].map(formatNumber).join(":");
+  } else if (type == "dm") {
+    return [year, month, day].map(formatNumber).join("-") + " " + [hour, minute].map(formatNumber).join(":");
+  } else if (type == 's' ){
+    return [hour, minute, second]
+  }
+}
+function formatNumber(n) {
+  n = n.toString();
+  return n[1] ? n : "0" + n;
+}
+
+var getCurrDate = function (type = "d") {
+  return timer(getDate().getTime() / 1000, type);
+}
+
+function toDate(time){
+  return timer(time, "d");
+}
+
+function toDateTime(time) {
+  return timer(time, "dt");
+}
+
+function toDateMinute(time) {
+  return timer(time, "dm");
+}
+
+function toDateMinTime(time) {
+  
+  return timer(time, "s");
+}
+
+
+
+function toPercent(val){
+  if (!val && val != 0) return "";
+  var val = Math.round(parseFloat(val) * 100) / 100;
+  var xsd = val.toString().split(".");
+  if (xsd.length == 1) {
+    val = val.toString() + ".00";
+    return val + "%";
+  }
+  if (xsd.length > 1) {
+    if (xsd[1].length < 2) {
+      alue = val.toString() + "0";
+    }
+    return val + "%";
+  }
+}
+
+/*
+* 参数说明：
+* s：要格式化的数字
+* n：保留几位小数
+* */
+function toNumber(s, n) {
+  if (!s && s != 0) return "";
+  n = n > 0 && n <= 20 ? n : 2;
+  s = parseFloat((s + "").replace(getRegExp("[^\d\.-]", "g"), "")).toFixed(n) + "";
+  var l = s.split(".")[0].split("").reverse(),
+    r = s.split(".")[1];
+  var t = "";
+  for (var i = 0; i < l.length; i++) {
+    t += l[i] + ((i + 1) % 3 == 0 && (i + 1) != l.length ? "," : "");
+  }
+  return t.split("").reverse().join("") + "." + r;
+}
+
+module.exports = {
+  timer: timer,  //时间戳转换
+  toDate: toDate,  //2019-11-11
+  toDateTime: toDateTime,   //2019-11-11 11:11:11
+  toDateMinute: toDateMinute,   //2019-11-11 11:11
+  toNumber: toNumber,  //转换数值显示
+  toPercent: toPercent,  //百分比
+  getCurrDate: getCurrDate,  //获取当前日期
+  toDateMinTime: toDateMinTime //获取时分秒数组
+}

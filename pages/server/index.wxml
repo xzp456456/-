@@ -2,10 +2,10 @@
 <view class="container">
   <view class="main">
   <view class="flex flex-row">
-    <image class="tu" src="../../static/pt.png"></image>
+    <image class="tu" src="{{info.image}}"></image>
     <view class="ml">
-      <view class="mp">A级-金美人哈密瓜（中）1个/约1300-15 00g</view>
-      <view class="text">x3</view>
+      <view class="mp">{{info.goods_name}}</view>
+      <view class="text">x{{info.quantity}}</view>
     </view>
     </view>
   </view>
@@ -13,7 +13,7 @@
   <view class="row live">
       <view class="label-or">售后类型</view>
       <view class="flex flex-row">
-      <view class="btn">仅退款</view>
+      <view class="btn" >仅退款</view>
       <view class="btn">退货退款</view>
       <view class="btn">换货</view>
       </view>
@@ -22,25 +22,27 @@
   <view class="flex flex-center desc flex-row">
   <view class="flex flex-bet flex-row row pd">
     <view class="label">申请原因</view>
-    <textarea class="area" placeholder-class="placeholder" placeholder="请详细填写申请原因，建议先与平台沟通"></textarea>
+    <textarea class="area" bindinput="getText" placeholder-class="placeholder" placeholder="请详细填写申请原因，建议先与平台沟通"></textarea>
   </view>
   </view>
   <view class="outline">
      <view class="flex flex-row row mt">
-      <view class="tet">退还现金</view><view class="price">¥74.71</view>
+      <view class="tet">退还现金</view><view class="price">¥{{info.max_renfund_moeny}}</view>
       </view>
-      <view class="out row">退款均采用原路退回，最多可退￥74.71</view>
+      <view class="out row">退款均采用原路退回，最多可退￥{{info.max_renfund_moeny}}</view>
   </view>
   <view class="upload">
     <view class="flex flex-row row">
       <view class="upload">上传凭证</view>
       <view class="textlai">（最多可上传6张）</view>
     </view>
-    <view class="row">
-    <view class="upData">
-    <image class="mk" src="../../static/icon_camera.png" mode="widthFix"></image>
-    <text class="add">添加照片</text>
+    <view class="row flex-row flex centerImg">
+    <view class="upData" bindtap="uploadPic">
+      
+    <image    class="mk" src="../../static/icon_camera.png" mode="widthFix"></image>
+    <text     class="add">添加照片</text>
     </view>
+    <image wx:for='{{urlImg}}'  src="{{item}}" class="loadUp"></image>
     </view>
   </view>
   <view class="bottom">

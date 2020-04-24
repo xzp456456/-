@@ -8,7 +8,8 @@ Page({
    */
   data: {
     time:[],
-    list:[]
+    list:[],
+    start_timer:''
   },
   getList(){
     wxRequest.getRequest(api.seckill(), { time_id:4 })
@@ -46,6 +47,16 @@ Page({
       this.setData({
         time:res.data.list
       })
+      let oldTime = res.data.list[0].remain_time
+      this.setData({
+         start_timer: setInterval(() => {
+           oldTime--
+
+           this.setData({
+             updateTime: oldTime
+           })
+         }, 1000)
+      })
     })
   },
   /**
@@ -59,14 +70,14 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-
+    clearInterval(this.data.start_timer);
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
+    clearInterval(this.data.start_timer);
   },
 
   /**

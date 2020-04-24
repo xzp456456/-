@@ -1,70 +1,87 @@
 <!--pages/order-detail/index.wxml-->
+<wxs module="tools" src="../../extend/tools.wxs"></wxs>
 <view class='container'>
 <view class='bg'>
 </view>
 <view class='orderPay'>
-<view class='wait'>等待支付，剩余
-<text class='time'> 14:23:32</text>
+<view class='wait' wx:if="{{info.status==3}}">
+订单已取消</view>
+<view class='wait' wx:if="{{info.status==0}}">
+订单已支付，等待发货</view>
+<view class='wait' wx:if="{{info.status==2}}">
+订单已完成</view>
+<view class='wait' wx:if="{{info.status==1}}">
+订单已发货</view>
+<view class='wait' wx:if="{{info.status==-2}}">等待支付，剩余
+<text class='time' wx:if="{{info.status==-2}}"> {{tools.toDateMinTime(updateTime)[0]}}:{{tools.toDateMinTime(updateTime)[1]}}:{{tools.toDateMinTime(updateTime)[2]}}</text>
 </view>
-<view class='ted'>预期未支付订单将自动取消</view>
-<view class='flex flex-row flex-bet fu'>
-  <view class='cancel'>取消订单</view>
+<view class='ted' wx:if="{{info.status==-2}}">预期未支付订单将自动取消</view>
+<view class='ted' wx:if="{{info.status!==-2&&info.status!==2}}"></view>
+<view class='ted' wx:if="{{info.status==2}}">感谢您对来农去卖的信任，期待再次光临</view>
+<view class='flex flex-row  fu'>
+  <view wx:if="{{info.status!==3}}" class='cancel' bindtap="readCancel" data-id="{{info.order_id}}">取消订单</view>
   <view class='online'>在线客服</view>
-  <view class='pay' bindtap="goToPay">去付款</view>
+  <view wx:if="{{info.status==-2}}" class='pay' bindtap="goToPay">去付款</view>
 </view>
 </view>
 <view class='max' >
-    <view class='timein'>预计送达时间：2020-03-20 9:00～10:00</view>
+    <view class='timein'>预计送达时间：{{info.order_time}}</view>
     <view class='row mt'>
       <view><text class='mobileName'>{{info.address.username}}</text> <text class='phone'>{{info.address.mobile}}</text> </view>
       <view>
       <image class='address' src='../../static/order_icon_adderss.png'></image>
-      <text class='addressText'>{{info.address.province}}{{info.address.city}}{{info.address.area}}</text>
+      <text class='addressText'>{{info.address.address}}</text>
       </view>
     </view>
 </view>
  <view class='list'>
   <view class='row'>
    <view class='title' >
-    <text class='orderId'>订单编号：18070514570001</text>
+    <text class='orderId'>订单编号：{{info.order_sno}}</text>
     <text class='type'>待付款</text>
    </view>
-   <view class='flex flex-row flex-bet mt-20' wx:for='{{info.goods}}'>
+   <view class='flex flex-row flex-bet mt-20 post' wx:for='{{info.order_goods}}'>
+   <view class="shouhou" bindtap="serve" data-order_goods_id="{{item.order_goods_id}}"   data-order_id="{{info.order_id}}">申请售后</view>
    <view class='flex flex-row '>
+   
     <image class='produce' src='{{item.image}}' mode="widthFix"></image>
+    <view>
     <view class='desc'>{{item.goods_name}}</view>
+    <view class="moneyPrice">¥{{item.price}}</view>
     </view>
-    <view class='num'>x{{item.buy_num}}</view>
+    </view>
+    <view class='num'>x{{item.quantity}}</view>
+    
    </view>
   <view class='flex flex-row flex-bet maker m'>
    <view class='ty'>商品金额</view>
-   <view class='mi'>¥{{info.total_money}}</view>
+   <view class='mi'>¥{{info.total_price}}</view>
   </view>
    <view class='flex flex-row flex-bet maker'>
    <view class='ty'>优惠券减免</view>
-   <view class='mi'>-¥2.0</view>
+   <view class='mi'>-¥{{info.coupon_money}}</view>
   </view>
   <view class='flex flex-row flex-bet maker'>
    <view class='ty bt'>满减</view>
-   <view class='mi'>-¥{{info.activity_money}}</view>
+   <view class='mi'>-¥{{info.reduction_money}}</view>
   </view>
   <view class='flex flex-row flex-bet maker'>
    <view class='ty'>备注</view>
-   <view class='mi'>送达前请电话联系</view>
+   <view class='mi'>{{info.message}}</view>
   </view>
   <view class='flex flex-row flex-bet maker border'>
    <view class='ty'>后台改价</view>
-   <view class='mi'>-¥20.0</view>
+   <view class='mi'>-¥{{info.backstage_money}}</view>
   </view>
-  <view class='textRing'>共7件，合计：<text class='priceMoney'>¥{{info.real_money}}</text> </view>
+  <view class='textRing'>共{{info.goods_count}}件，合计：<text class='priceMoney'>¥{{info.real_money}}</text> </view>
   </view>
 </view>
 <view class='modeBottom'>
 <view class='row'>
  <view class='ps'>订单信息</view>
  <view>
-  <view class='oid'>订单编号：29181028203892828</view>
-  <view class='oid'>下单时间：2019-11-28 14:19:30</view>
+  <view class='oid'>订单编号：{{info.order_sno}}</view>
+  <view class='oid'>下单时间：{{info.order_time}}</view>
  </view>
  </view>
 </view>
